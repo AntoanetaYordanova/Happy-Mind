@@ -1,0 +1,21 @@
+section {
+    background: #FAE8E0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    position: relative;
+}
+.happy-mind-logo{
+    margin-left: 12px;
+    font-size: 28px;
+}
+
+.happy-mind-logo span:nth-child(1) {
+    color: #EF7C8E;
+    font-style: italic;
+}
+
+.happy-mind-logo span:nth-child(2) {
+    color: #95bdb0;
+}
+

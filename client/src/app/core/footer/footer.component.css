@@ -1,0 +1,29 @@
+section{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid black;
+}
+
+h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #18362c;
+}
+a{
+    color: #18362c;
+}
+
+ul a{
+    font-size: 16px;
+}
+
+a:hover{
+     color: #2b6451;   
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
