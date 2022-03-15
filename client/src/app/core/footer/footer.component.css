@@ -7,12 +7,12 @@ section{
 }
 
 h3{
-    font-size: 20px;
+    font-size: 23px;
     margin-bottom: 10px;
-    color: #18362c;
+    color: black;
 }
 a{
-    color: #18362c;
+    color: black;
 }
 
 ul a{
@@ -24,6 +24,6 @@ a:hover{
 }
 
 ul {
-    padding: 0;
+    padding: 0 0 5px 0;
     margin: 0;
 }

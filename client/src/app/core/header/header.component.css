@@ -1,13 +1,15 @@
 section {
-    background: #FAE8E0;
+    background: rgb(241,212,199);
+background: radial-gradient(circle, rgba(241,212,199,1) 31%, rgba(244,226,218,1) 100%);
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
-    position: relative;
 }
 .happy-mind-logo{
     margin-left: 12px;
     font-size: 28px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .happy-mind-logo span:nth-child(1) {
@@ -17,5 +19,10 @@ section {
 
 .happy-mind-logo span:nth-child(2) {
     color: #95bdb0;
+}
+
+.headerImg{
+    width: 100px;
+    opacity: 0.5;
 }
 

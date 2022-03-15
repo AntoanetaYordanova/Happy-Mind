@@ -1,0 +1,70 @@
+.imgContainer {
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+img{
+    width: 100%; 
+    height: 100%;
+    border-bottom: 40px solid #BCECDD;
+
+}
+
+.imgContainer div {
+    position: relative;
+}
+
+.imgContainer div h5 {
+    position: absolute;
+    bottom: 3px;
+    right: 300px;
+}
+
+a, .imgContainer div h5 {
+    font-size: 15px;
+    font-style: italic;
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+}
+
+.happy-mind-logo {
+    display: inline;
+}
+
+section.about-content .happy-mind-logo a{
+    font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+
+.happy-mind-logo span:nth-child(1) {
+    color: #EF7C8E;
+    font-style: italic;
+}
+
+.happy-mind-logo span:nth-child(2) {
+    color: #95bdb0;
+}
+
+.about-content p:nth-child(2) {
+    display: inline;
+
+}
+
+.about-content {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.about-content p, .about-content a{
+    font-size: 30px;
+}
+.about-content a{
+    text-decoration: underline;
+    color: rgb(59, 58, 58);
+    
+}
