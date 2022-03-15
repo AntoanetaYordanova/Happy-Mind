@@ -1,0 +1,23 @@
+.blogContentWrapper {
+    width: 60%;
+    margin: auto;
+    background: #f5f1ef;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+
+
+h2 a{
+    font-size: 45px;
+    color: black;
+}
+a.read-more{
+    font-style: italic;
+    color: rgb(100, 97, 97);
+    font-size: 22px;
+}
+
+p{
+    font-size: 22px;
+}

@@ -1,0 +1,48 @@
+.imgContainer{
+    width: 700px;
+    min-width: 400px;
+    margin: auto;
+}
+
+.imgContainer img {
+    width: 100%;
+    border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+article {
+    width: 720px;
+    margin: auto;
+    border-bottom: 1px solid rgb(167, 161, 161);
+    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.blogContentWrapper {
+    width: 60%;
+    margin: auto;
+    background: #f5f1ef;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+
+
+h2 a{
+    font-size: 48px;
+    color: black;
+}
+a.read-more{
+    font-style: italic;
+    color: rgb(100, 97, 97);
+    font-size: 22px;
+}
+
+p{
+    font-size: 22px;
+}
+
+h5{
+    font-size: 27px;
+}
