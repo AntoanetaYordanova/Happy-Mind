@@ -1,11 +1,12 @@
+//TODO Test Therapist Controller
+
 const router = require('express').Router();
 const { isGuest } = require('../middlewares/guards');
-const { register, login, logout } = require('../services/users');
+const { register, login, logout } = require('../services/therapists');
 const mapErrors = require('../utils/mapper');
 
 
 router.post('/register', isGuest(), async (req, res) => {
-    console.log(req);
     try {
         if (req.body.password.trim() == '' || req.body.email.trim() == '') {
             throw new Error('Email and password are required');

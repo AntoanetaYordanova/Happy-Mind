@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -8,7 +7,6 @@ import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    NavComponent,
     FooterComponent,
     HeaderComponent
   ],
@@ -17,7 +15,6 @@ import { HeaderComponent } from './header/header.component';
     RouterModule
   ],
   exports: [
-    NavComponent,
     FooterComponent,
     HeaderComponent
   ]

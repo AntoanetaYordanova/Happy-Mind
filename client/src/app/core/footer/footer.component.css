@@ -1,26 +1,39 @@
-section{
-    width: 75%;
-    margin: auto;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #d6dbdd;
+    background: #F4F7F8;
+}
+
+.footerLinks{
     display: flex;
     justify-content: space-around;
-    border-top: 1px solid black;
 }
 
-h3{
-    font-size: 23px;
+.copyright{
+    font-size: 15px;
+    color: #808485;
+    position: absolute;
+    left: 0;
+}
+
+footer a{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: normal;
+    font-size: 19px;
+    margin-top: 10px;
     margin-bottom: 10px;
     color: black;
-}
-a{
-    color: black;
+    transition: 0.2s;
 }
 
-ul a{
-    font-size: 16px;
-}
-
-a:hover{
-     color: #2b6451;   
+footer a:hover{
+    color: #2b6451;   
 }
 
 ul {

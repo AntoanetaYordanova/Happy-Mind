@@ -1,15 +1,27 @@
-section {
-    background: rgb(241,212,199);
-background: radial-gradient(circle, rgba(241,212,199,1) 31%, rgba(244,226,218,1) 100%);
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+
+header{
+    background: rgb(255,253,245);
+    background: linear-gradient(142deg, rgba(255,253,245,1) 0%, rgba(255,253,240,1) 100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0px 2px 15px -4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 15px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 15px -4px rgba(0,0,0,0.75);
+    position: relative;
+    z-index: 10;
 }
+
+
 .happy-mind-logo{
     margin-left: 12px;
     font-size: 28px;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bold;
 }
 
 .happy-mind-logo span:nth-child(1) {
@@ -21,8 +33,38 @@ background: radial-gradient(circle, rgba(241,212,199,1) 31%, rgba(244,226,218,1)
     color: #95bdb0;
 }
 
-.headerImg{
-    width: 100px;
-    opacity: 0.5;
+ul {
+    display: flex;
+    margin-right: 10px;
+}
+li {
+    margin-right: 15px;
+    font-size: 22px;
+    transition: 0.3s;
 }
 
+li a{
+    color: #1B392C;
+    transition: 0.3s;
+}
+
+li a:hover{
+    color: #42b18c;
+}
+
+li:nth-child(5) a {
+    color: white;
+    background-color: #28503f;
+    padding: 4px 10px;
+    border: 2px solid #95bdb0;
+    border-radius: 21px;
+    position: relative;
+    bottom: 4px;
+    position: relative;
+    top: 2px;
+}
+
+li:nth-child(5) a:hover{
+    text-decoration: none;
+    background: #35886c;
+}

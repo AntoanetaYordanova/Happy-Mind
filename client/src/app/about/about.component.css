@@ -7,18 +7,11 @@
 img{
     width: 100%; 
     height: 100%;
-    border-bottom: 40px solid #BCECDD;
-
-}
-
-.imgContainer div {
-    position: relative;
-}
-
-.imgContainer div h5 {
-    position: absolute;
-    bottom: 3px;
-    right: 300px;
+    /* border-bottom: 10px solid #BCECDD;
+    border-right: 10px solid #BCECDD; */
+    box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
 }
 
 a, .imgContainer div h5 {
@@ -54,10 +47,11 @@ section.about-content .happy-mind-logo a{
 }
 
 .about-content {
-    width: 80%;
+    width: 50%;
     margin: auto;
     text-align: center;
     margin-top: 30px;
+    margin-bottom: 5%;
 }
 
 .about-content p, .about-content a{

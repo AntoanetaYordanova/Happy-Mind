@@ -46,3 +46,29 @@ p{
 h5{
     font-size: 27px;
 }
+
+.category{
+    background: #ebded8;
+    display: inline-block;
+}
+
+.category{
+    display: flex;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.category a, .category img{
+    display: inline;
+}
+
+.category img{
+    width: 18px;
+    margin-right: 5px;
+}
+
+.category a {
+    color: rgb(100, 97, 97);
+    
+}

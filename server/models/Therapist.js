@@ -1,19 +1,19 @@
 const { model, Schema } = require('mongoose');
 
-const userSchema = new Schema({
+const therapistSchema = new Schema({
     email: { type: String, required: [true, 'Email is required'] },
     hashedPassword: { type: String, required: true },
-    favoriteAsrticles: { type : [ Schema.Types.ObjectId ], ref : 'Article', default : []}
+    comments : { type : [Schema.Types.ObjectId], ref : 'Comment', default : []}
 });
 
 
-userSchema.index({ email: 1}, {
+therapistSchema.index({ email: 1}, {
     collation: {
         locale: 'en',
         strength: 1
     }
 });
 
-const User = new model('User', userSchema);
+const Therapist = new model('Therapist', therapistSchema);
 
-module.exports = User;
+module.exports = Therapist;

@@ -7,6 +7,7 @@ import { IArticle } from 'src/app/interfaces/Article';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
+  tagUrl: string = '/assets/images/tag-solid.svg'; 
   @Input() article!: IArticle
 
   constructor() { }
