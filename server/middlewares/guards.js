@@ -10,6 +10,7 @@ function isAuth() {
 
 function isGuest() {
     return (req, res, next) => {
+    console.log(req.user);
         if (!req.user) {
             next();
         } else {
@@ -20,7 +21,7 @@ function isGuest() {
 
 function isOwner() {
     return (req, res, next) => {
-        if (req.user && req.user._id == res.locals.article.owner) {
+        if (req.user && req.user._id == res.locals.comment.author) {
             next();
         } else {
             res.status(403).json({ message: 'You cannot modify this record'});

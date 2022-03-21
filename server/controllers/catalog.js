@@ -3,9 +3,7 @@ const api = require('../services/article');
 const mapErrors = require('../utils/mapper');
 const preload = require('../middlewares/preload');
 
-
 router.get('/', async (req, res) => {
-    // console.log(req.user);
     const data = await api.getAll();
     res.json(data);
 });
@@ -35,7 +33,7 @@ router.get('/:id', preload(), (req, res) => {
     res.json(article);
 });
 
-router.put('/:id', preload(), async (req, res) => {
+router.put('/:id', preload(),async (req, res) => {
     const articleId = req.params.id;
     const article = {
         title: req.body.title,
@@ -56,7 +54,7 @@ router.put('/:id', preload(), async (req, res) => {
     }
 });
 
-router.delete('/:id', preload(), async (req, res) => {
+router.delete('/:id',preload(), async (req, res) => {
     try {
         const articleId = req.params.id;
         await api.deleteById(articleId);

@@ -19,9 +19,9 @@ function getById(id) {
 async function update(id, article) {
     const existing = await Article.findById(id);
 
-    existing.title = Article.title;
-    existing.description = Article.description;
-    existing.source = Article.source;
+    existing.title = article.title;
+    existing.description = article.description;
+    existing.source = article.source;
 
     await existing.save();
 
