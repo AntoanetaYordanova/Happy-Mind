@@ -24,6 +24,9 @@ img{
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+    box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
 }
 
 .quoteWrapper{

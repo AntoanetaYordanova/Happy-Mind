@@ -12,6 +12,7 @@ img{
     box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 61px -25px rgba(0,0,0,0.75);
+    border-radius: 11px;
 }
 
 a, .imgContainer div h5 {
