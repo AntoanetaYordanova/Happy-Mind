@@ -1,13 +1,13 @@
 
  <article>
-    <a href="/article/{{article._id}}">
+    <a href="/articles/{{article._id}}">
         <div class="imgContainer">
             <img src="{{article.image}}" alt="">
         </div>
     </a>
-    <h2><a href="/article/{{article._id}}">{{article.title}}</a></h2>
+    <h2><a href="/articles/{{article._id}}">{{article.title}}</a></h2>
     <section>
-        <p>{{article.shortDescription}}...<a href="/article/{{article._id}}" class="read-more"> read more</a></p>
+        <p>{{article.shortDescription}}...<a href="/articles/{{article._id}}" class="read-more"> read more</a></p>
         <div class="category">
             <img [src]="tagUrl" alt="">
             <a href="">{{article.category}}</a>

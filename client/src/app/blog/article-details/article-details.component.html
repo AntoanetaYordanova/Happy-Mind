@@ -1,0 +1,17 @@
+<section *ngIf="article" class="article">
+    <article class="articleWrapper">
+        <div class="articleImgWrapper">
+            <img [src]="article.image" alt="">
+        </div>
+        <h2>{{article!.title}}</h2>
+        <section *ngFor="let content of article.content">
+            <h4 *ngIf="content.subTitle.length > 1">{{content.subTitle}}</h4>
+            <p class="description">{{content.description}}</p>
+        </section>
+        <p class="readTheArticle">Read the whole article on <a [href]="article.source" target="_blank">{{article.source}}</a></p>
+    </article>
+</section>
+
+<section *ngIf="!article">
+    <app-loading></app-loading>
+</section>

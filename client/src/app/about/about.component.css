@@ -23,6 +23,9 @@ a, .imgContainer div h5 {
 
 .happy-mind-logo {
     display: inline;
+    background: rgb(255,253,245);
+    padding: 15px 10px 10px 10px;
+    border-radius: 10px;
 }
 
 section.about-content .happy-mind-logo a{
@@ -58,7 +61,10 @@ section.about-content .happy-mind-logo a{
     font-size: 30px;
 }
 .about-content a{
+    color: rgb(59, 58, 58); 
+}
+
+.about-content a:hover{
     text-decoration: underline;
-    color: rgb(59, 58, 58);
-    
+    text-decoration-color: rgb(102, 99, 99); 
 }

@@ -1,0 +1,12 @@
+.loadingWrapper{
+    display: flex;
+    justify-content: center;
+    min-height: 87vh;
+    margin-top: 100px;
+}
+
+p{
+    color: #1B392C;
+    font-size: 50px;
+    margin: auto;
+}

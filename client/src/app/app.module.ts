@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http'
-import { ArticlesService } from './articles.service';
 import { BlogModule } from './blog/blog.module';
 
 @NgModule({
@@ -24,7 +23,7 @@ import { BlogModule } from './blog/blog.module';
     HttpClientModule,
     BlogModule
   ],
-  providers: [ArticlesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

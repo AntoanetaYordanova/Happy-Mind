@@ -5,7 +5,7 @@ const preload = require('../middlewares/preload');
 
 
 router.get('/', async (req, res) => {
-    console.log(req.user);
+    // console.log(req.user);
     const data = await api.getAll();
     res.json(data);
 });

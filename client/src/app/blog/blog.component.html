@@ -1,3 +1,12 @@
-<section class="blogContentWrapper">
-   <app-article *ngFor="let article of articles" [article] = 'article'></app-article>
+<section *ngIf="articles" class="blogContentWrapper">
+  <div>
+    <app-article
+      *ngFor="let article of articles"
+      [article]="article"
+    ></app-article>
+  </div>
+</section>
+
+<section *ngIf="!articles">
+  <app-loading></app-loading>
 </section>

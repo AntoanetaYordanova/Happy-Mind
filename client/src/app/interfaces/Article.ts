@@ -1,7 +1,9 @@
+import { IContent } from './Content'
+
 export interface IArticle {
     _id : string,
     title: string,
-    description: [{title: string, description: string}],
+    content: [IContent],
     shortDescription: string,
     source: string,
     image: string,
