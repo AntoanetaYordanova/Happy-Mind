@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const api = require('../services/article');
-// const { isAuth, isOwner } = require('../middlewares/guards');
 const mapErrors = require('../utils/mapper');
 const preload = require('../middlewares/preload');
 
@@ -14,7 +13,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const article = {
         title: req.body.title,
-        description: req.body.description,
+        content: req.body.content,
         shortDescription: req.body.shortDescription,
         source: req.body.source,
         image: req.body.image,
@@ -40,7 +39,7 @@ router.put('/:id', preload(), async (req, res) => {
     const articleId = req.params.id;
     const article = {
         title: req.body.title,
-        description: req.body.description,
+        content: req.body.content,
         shortDescription: req.body.shortDescription,
         source: req.body.source,
         image: req.body.image,

@@ -6,13 +6,13 @@ const catalogController = require('./controllers/catalog');
 const usersController = require('./controllers/users');
 const therapistController = require('./controllers/therapists')
 const auth = require('./middlewares/auth');
-
+const { connectionKey } = require('../../DBK/key');
 
 start();
 
 async function start() {
     try {
-        await mongoose.connect('mongodb://localhost:27017/happymind', {
+        await mongoose.connect(connectionKey, {
             useUnifiedTopology: true,
             useNewUrlParser: true
         });
@@ -26,7 +26,7 @@ async function start() {
     app.use(express.json());
     app.use(cors());
     app.use(auth());
-    app.use('/api/articles', catalogController);
+    app.use('/articles', catalogController);
     app.use('/users', usersController);
     app.use('/therapists', therapistController);
 

@@ -2,7 +2,7 @@
 
 const router = require('express').Router();
 const { isGuest } = require('../middlewares/guards');
-const { register, login, logout } = require('../services/therapists');
+const { register, login, logout } = require('../services/therapistsUser');
 const mapErrors = require('../utils/mapper');
 
 

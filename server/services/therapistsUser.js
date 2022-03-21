@@ -3,7 +3,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const Therapist = require('../models/Therapist');
+const Therapist = require('../models/TherapistUser');
 
 
 const JWT_SECRET = 'asoiducan93284c9rew';
