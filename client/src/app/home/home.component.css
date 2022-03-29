@@ -1,9 +1,10 @@
 .homeContainer {
     /* background: #AEC4C4; */
     padding: 50px 0 50px 0;
-    min-height: 82vh;
+    min-height: 100vh;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -11,11 +12,14 @@
 .homeContainer section{
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
+    width: 50%;
+    /* flex-basis: 300px; */
+    /* height: 300px; */
     flex: 1;
 }
 .imgWrapper {
-    max-width: 58%;
+    width: 90%;
     margin: auto ;
 }
 

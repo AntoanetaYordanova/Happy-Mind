@@ -7,7 +7,13 @@ body {
     min-height: 100vh;
     font-family: 'DM Sans', sans-serif;
     background: #AEC4C4;
+    box-sizing: border-box;
 }
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
 a{
     text-decoration: none;
 }
