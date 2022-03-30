@@ -12,14 +12,11 @@
 .homeContainer section{
     display: flex;
     flex-direction: column;
-    /* flex-basis: 100%; */
     width: 50%;
-    /* flex-basis: 300px; */
-    /* height: 300px; */
     flex: 1;
 }
 .imgWrapper {
-    width: 90%;
+    width: 70%;
     margin: auto ;
 }
 

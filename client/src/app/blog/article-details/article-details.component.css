@@ -1,6 +1,6 @@
 .articleWrapper{
     width: 60%;
-    margin: auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 253, 244, 0.3);
@@ -38,8 +38,4 @@ h2, h4{
 
 .readTheArticle{
     font-size: 18px;
-}
-
-.readTheArticle a{
-    
 }
