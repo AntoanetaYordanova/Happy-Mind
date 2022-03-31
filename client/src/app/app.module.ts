@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http'
 import { BlogModule } from './blog/blog.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BlogModule } from './blog/blog.module';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
-    BlogModule
+    BlogModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

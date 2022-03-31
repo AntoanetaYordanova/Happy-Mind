@@ -5,7 +5,7 @@ const mapErrors = require('../utils/mapper');
 
 
 router.post('/register', isGuest(), async (req, res) => {
-    console.log(req);
+    console.log(req.body);
     try {
         if (req.body.password.trim() == '' || req.body.email.trim() == '') {
             throw new Error('Email and password are required');

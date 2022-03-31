@@ -20,8 +20,8 @@ async function register(email, password) {
     });
 
     await user.save();
-
-    return createSession(user);
+   
+    return  createSession(user);
 }
 
 async function login(email, password) {

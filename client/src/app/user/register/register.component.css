@@ -1,0 +1,72 @@
+.formContainer {
+    display: flex;
+}
+
+.registerForm {
+    margin: 15% auto;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255,253,245);
+    padding: 35px 30px 40px 30px;
+    width: 33%;
+    border-radius: 8px;
+}
+
+.signUpTitle{
+    text-align: center;
+    font-size: 33px;
+    font-weight: 800;
+    color: #28503f;
+    margin: 0 0 19px 0;
+}
+
+.registerForm label {
+    font-size: 25px;
+}
+
+.registerForm input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #AEC4C4;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+
+.registerForm input:focus{
+    border: 2px solid #28503f;
+}
+
+.registerBtn{
+    width: 70%;
+    margin-top: 10px;
+    padding: 8px 8px;
+    background: #28503f;
+    align-self: center;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.3s;
+    border: 2px solid #95bdb0;
+}
+
+.registerBtn:hover{
+    cursor: pointer;
+    background: #35886c;
+}
+
+p.error {
+    text-align: right;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+    margin: 0;
+}
+
+input.ng-invalid.ng-touched {
+    border-left: 3px solid red;
+}

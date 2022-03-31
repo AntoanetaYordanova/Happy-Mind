@@ -1,0 +1,52 @@
+<div class="formContainer">
+  <form
+    class="registerForm"
+    [formGroup]="registerFormGroup"
+    (ngSubmit)="registerHandler()"
+  >
+    <h4 class="signUpTitle">Sign Up</h4>
+    <label for="email">Email</label>
+    <input
+      formControlName="email"
+      type="text"
+      name="email"
+      id="email"
+      placeholder="Email"
+    />
+    <ng-container *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
+      <p class="error" *ngIf="registerFormGroup.controls['email'].errors?.['required']">Email is required</p>
+      <p class="error" *ngIf="registerFormGroup.controls['email'].errors?.['email']">Please enter a valid email</p>
+    </ng-container>
+    <ng-container *ngIf="errorString.length > 0">
+        <p class="error">
+            {{errorString}}
+        </p>
+    </ng-container>
+    <div formGroupName="passwords">
+      <label for="password">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        name="password"
+        id="password"
+        placeholder="******"
+      />
+      <ng-container *ngIf="passwordGroup.controls['password'].touched && passwordGroup.controls['password'].invalid">
+        <p class="error" *ngIf="passwordGroup.controls['password'].errors?.['required']">Password is required</p>
+        <p class="error" *ngIf="passwordGroup.controls['password'].errors?.['minlength']">Password must be at least 6 characters long</p>
+      </ng-container>
+      <label for="rePass">Repeat Password</label>
+      <input
+        formControlName="rePass"
+        type="password"
+        name="rePass"
+        id="rePass"
+        placeholder="******"
+      />
+      <ng-container *ngIf="passwordGroup.controls['rePass'].touched && passwordGroup.controls['rePass'].invalid">
+        <p class="error" *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']">Passwords don't match</p>
+      </ng-container>
+    </div>
+    <button class="registerBtn">Register</button>
+  </form>
+</div>
