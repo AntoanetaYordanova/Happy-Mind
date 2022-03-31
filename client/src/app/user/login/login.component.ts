@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from '../user.service';
 
 //TODO: Add favicons, and guards
@@ -11,6 +12,9 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  faEnvelope = faEnvelope;
+  faLock = faLock;
+
   errorString: string = '';
 
   loginFormGroup: FormGroup = this.formBuilder.group({

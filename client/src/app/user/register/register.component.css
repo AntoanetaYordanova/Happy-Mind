@@ -70,3 +70,24 @@ p.error {
 input.ng-invalid.ng-touched {
     border-left: 3px solid red;
 }
+
+.emailGroup, .passwordGroup{
+    position: relative;
+}
+
+fa-icon{
+    position: absolute;
+    
+    color: rgb(176, 176, 176);
+    font-size: 20px;
+}
+
+.emailIcon{
+    right: 10px;
+    top: 50px;
+}
+
+.lockIcon{
+    right: 10px;
+    top: 51px;
+}

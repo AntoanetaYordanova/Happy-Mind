@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { passwordMatch } from '../utils';
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 
 //TODO: Add favicons, better password validator and guards
 
@@ -12,6 +13,9 @@ import { passwordMatch } from '../utils';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  faEnvelope = faEnvelope;
+  faLock = faLock;
+  
   errorString: string = '';
 
   passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6)]);

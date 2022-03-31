@@ -10,6 +10,7 @@ import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http'
 import { BlogModule } from './blog/blog.module';
 import { UserModule } from './user/user.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserModule } from './user/user.module';
     CoreModule,
     HttpClientModule,
     BlogModule,
-    UserModule
+    UserModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

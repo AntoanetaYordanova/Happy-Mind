@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IArticle } from 'src/app/interfaces/Article';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-article',
@@ -9,10 +10,12 @@ import { IArticle } from 'src/app/interfaces/Article';
 export class ArticleComponent implements OnInit {
   tagUrl: string = '/assets/images/tag-solid.svg'; 
   @Input() article!: IArticle
-
+  faCoffee = faCoffee;
+  
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

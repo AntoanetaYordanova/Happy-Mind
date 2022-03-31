@@ -5,6 +5,7 @@ import { ArticleComponent } from './article/article.component';
 import { BlogRoutingModule } from './blog-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -17,7 +18,8 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
   imports: [
     CommonModule,
     BlogRoutingModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule
   ],
   exports : [
     BlogComponent
