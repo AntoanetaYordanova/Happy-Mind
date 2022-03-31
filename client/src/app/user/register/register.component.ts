@@ -14,7 +14,7 @@ import { passwordMatch } from '../utils';
 export class RegisterComponent implements OnInit {
   errorString: string = '';
 
-  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(2)]);
+  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6)]);
 
   registerFormGroup: FormGroup =  this.formBuilder.group({
     'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -48,6 +48,8 @@ export class RegisterComponent implements OnInit {
       error: (err) => {
         if(err.error.message == 'Email already exists'){
           this.errorString = err.error.message
+        } else {
+          this.errorString = 'Error'
         }
       }      
     }) 

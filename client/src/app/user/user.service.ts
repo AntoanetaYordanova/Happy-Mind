@@ -21,4 +21,8 @@ export class UserService {
   register(data: { email: string, password: string }): Observable<IUser>{
     return this.client.post<IUser>(`${API_URL}/users/register`, data).pipe(tap((user) => this.user = user));
   }
+
+  login(data: { email: string, password: string }): Observable<IUser>{
+    return this.client.post<IUser>(`${API_URL}/users/login`, data).pipe(tap((user) => this.user = user));
+  }
 }

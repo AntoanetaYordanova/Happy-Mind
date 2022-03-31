@@ -1,0 +1,20 @@
+p {
+    /* background: #FFFDF3; */
+    background: linear-gradient(142deg, rgba(255,253,245,1) 0%, rgba(255,253,240,1) 100%);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+p.error, .error a{
+    font-size: 35px;
+    margin: 200px 0;
+    color: #1d382c;
+}
+
+.error a{
+    text-decoration: underline;
+}
+
+.error a:hover{
+    color: #42b18c;
+}
