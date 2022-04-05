@@ -1,0 +1,24 @@
+<div class="contentWrapper" *ngIf="data">
+   <ng-container *ngFor="let therapist of data">
+    <a routerLink="/therapists/{{ therapist._id }}">
+        <section  class="therapistWrapper">
+          <div class="imgContainer">
+            <div class="imgWrapper">
+                <img [src]="therapist.img" alt="therapist image" />
+              </div>
+          </div>
+          <div class="descritpionContainer">
+            <h3>{{ therapist.firstName }} {{ therapist.lastName }}</h3>
+            <p>{{ therapist.description | shorten: 500 }}</p>
+          </div>
+          <div class="contactContainer">
+            <p>{{ therapist.phoneNumber }}</p>
+            <a>View</a>
+          </div>
+        </section>
+      </a>
+   </ng-container>
+
+</div>
+
+<app-loading *ngIf="!data"></app-loading>

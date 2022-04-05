@@ -1,0 +1,36 @@
+<div class="contentWrapper">
+    <section class="leftSection">
+        <div class="imgWrapper">
+            <img [src]="therapist?.img" alt="therapist image">
+        </div>
+    </section>
+    <section class="rightSection">
+        <header>
+            <h3>{{therapist?.firstName}} {{therapist?.lastName}}</h3>
+            <p>{{therapist?.phoneNumber}}</p>
+        </header>
+        <div>
+            <section>   
+                <h5>About</h5>
+                <p>{{therapist?.description}}</p>
+                <section>
+                    <form class="commentForm"  [formGroup]="commentForm"
+                    (ngSubmit)="commentHandler()">
+                        <label for="comment">Leave a comment</label>
+                        <textarea name="comment" id="comment"  formControlName="comment"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </section>
+            </section>
+            <aside class="specialties">
+                <h5>Specialties</h5>
+                <ul>
+                    <li *ngFor="let item of therapist?.qualifications">{{item}}</li>
+                </ul>
+            </aside>
+        </div>
+        
+    </section>
+</div>
+
+<app-loading *ngIf="!therapist"></app-loading>

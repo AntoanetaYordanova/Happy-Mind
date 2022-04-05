@@ -1,0 +1,73 @@
+a {
+    color: #000;
+}
+
+.contentWrapper {
+    max-width: 70%;
+    margin: 30px auto;
+}
+
+.imgWrapper {
+    max-width: 150px;
+}
+
+.imgWrapper img{
+    width: 100%;
+}
+
+.therapistWrapper{
+    display: flex;
+    margin-bottom: 10px;
+    background: #E4EBEB;
+    padding: 10px 10px;
+    transition: 0.3s;
+}
+
+.therapistWrapper:hover{
+    -webkit-box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
+box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
+}
+
+.descritpionContainer {
+    width: 70%;
+    margin: 0 15px;
+}
+
+.contactContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contactContainer, .imgContainer{
+    width: 15%;
+}
+
+.descritpionContainer h3 {
+    font-size: 35px;
+    margin: 0px;
+}
+
+.descritpionContainer p {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+.contactContainer p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.contactContainer a {
+    font-size: 23px;
+    background: #FFFDF3;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contactContainer a:hover {
+    background: #ebe8e0;
+}

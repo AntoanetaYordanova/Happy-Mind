@@ -22,7 +22,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       tap((event) => {
         if (event instanceof HttpResponse) {
-          if(event.url?.endsWith('/login') || event.url?.endsWith('register')){
+          if(event.url?.endsWith('/login') || event.url?.endsWith('/register')){
             const newUser = event.body;
             this.authService.setUser(newUser);
           }

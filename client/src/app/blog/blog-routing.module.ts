@@ -7,11 +7,17 @@ import { BlogComponent } from './blog.component';
 const routes: Routes = [
   {
     path : 'articles',
-    component : BlogComponent
+    component : BlogComponent,
+    data : {
+      title: 'Articles'
+    }
   },
   {
     path: 'articles/:id',
-    component: ArticleDetailsComponent
+    component: ArticleDetailsComponent,
+    data : {
+      title: 'Article'
+    }
   }
 ];
 

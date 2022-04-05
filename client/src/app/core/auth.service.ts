@@ -9,9 +9,7 @@ export class AuthService {
   constructor() { }
 
   setUser(data: any) {
-    localStorage.setItem('user', JSON.stringify(data));
-    console.log( localStorage.getItem('user'));
-    
+    localStorage.setItem('user', JSON.stringify(data));    
   }
 
   getUser(): IUser | null{

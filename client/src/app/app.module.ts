@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { BlogModule } from './blog/blog.module';
 import { UserModule } from './user/user.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterceptor } from './core/auth.interceptor';
+import { TherapistModule } from './therapist/therapist.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { AuthInterceptor } from './core/auth.interceptor';
     HttpClientModule,
     BlogModule,
     UserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TherapistModule
   ],
   providers: [
     {

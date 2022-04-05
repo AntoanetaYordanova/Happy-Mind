@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+h5{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 25px;
+}
+
+.contentWrapper{
+    max-width: 60%;
+    margin: auto;
+    display: flex;
+}
+
+.leftSection{
+    width: 20%;
+    margin: 20px 20px 0px 0px;
+}
+
+.rightSection{
+    width: 80%;
+}
+
+.imgWrapper{
+    width: 100%;
+}
+
+.imgWrapper img{
+    width: 100%;
+}
+
+.rightSection header{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+header {
+    border-bottom: 1px solid rgb(149, 144, 144);
+}
+
+header h3, header p{
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.rightSection div{
+    display: flex;
+}
+
+.rightSection p{
+    font-size: 22px;
+}
+
+.rightSection ul {
+    padding: 0;
+}
+
+.rightSection li{
+    list-style-type: disc;
+    margin-left: 15px;
+    font-size: 19px;
+}
+
+.specialties{
+    margin-left: 10px;
+}
+
+.commentForm{
+    display: flex;
+    flex-direction: column;
+    background: #E4EBEB;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.commentForm textarea{
+    width: 70%;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
+
+.commentForm textarea:focus{
+    border: 2px solid rgb(157, 155, 155);
+}
+
+.commentForm label{
+    text-align: center;
+    font-size: 22px;
+}
+
+.commentForm button {
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: rgb(52, 49, 49);
+}
+
+.commentForm button:hover{
+    cursor: pointer;
+}
+
+
+
+

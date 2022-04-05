@@ -19,7 +19,8 @@ const routes: Routes = [
         canActivate: [AuthActivate],
         data: {
             authenticationRequired: false,
-            authenticationFailureRedirect: '/home'
+            authenticationFailureRedirect: '/home',
+            title: 'Register'
         }
       },
       {
@@ -28,7 +29,8 @@ const routes: Routes = [
         canActivate: [AuthActivate],
         data: {
             authenticationRequired: false,
-            authenticationFailureRedirect: '/home'
+            authenticationFailureRedirect: '/home',
+            title: 'Login'
         }
       },
       {
@@ -46,7 +48,8 @@ const routes: Routes = [
         canActivate: [AuthActivate],
         data: {
             authenticationRequired: true,
-            authenticationFailureRedirect: '/user/login'
+            authenticationFailureRedirect: '/user/login',
+            title: 'Profile'
         }
       }
     ]
