@@ -27,7 +27,9 @@ export class UserService {
     return this.client.post<IUser>(`${API_URL}/users/login`, data);
   }
 
-  logout() {   
+  logout():Observable <any> {   
     this.authService.removeUser();
+    return this.client.get<any>(`${API_URL}/users/logout`);
   }
+
 }

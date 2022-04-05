@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { IComment } from 'src/app/interfaces/Comment';
 import { ITherapistProfile } from 'src/app/interfaces/TherapistProfile';
 import { TherapistService } from '../therapist.service';
 
@@ -9,13 +10,15 @@ import { TherapistService } from '../therapist.service';
   templateUrl: './therapist-details.component.html',
   styleUrls: ['./therapist-details.component.css']
 })
-export class TherapistDetailsComponent implements OnInit {
+export class TherapistDetailsComponent implements OnInit, OnDestroy {
 
   commentForm: FormGroup = this.formBuilder.group({
     'comment' : new FormControl(null, [ Validators.required ])
   });
 
-  therapist!: ITherapistProfile | undefined
+  therapist!: ITherapistProfile | undefined;
+
+  comments!: IComment[] | [];
 
   constructor(
     private therapistService: TherapistService, 
@@ -25,6 +28,12 @@ export class TherapistDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchTherapist();
+    this.getComments();
+  }
+
+  ngOnDestroy(): void {
+    console.log(this.comments);
+    
   }
 
 
@@ -34,7 +43,13 @@ export class TherapistDetailsComponent implements OnInit {
   }
 
   commentHandler(){
-    console.log(this.commentForm.value);
+    const data = { content: this.commentForm.value.comment };    
+    this.therapistService.postComment(this.route.snapshot.params['id'], data).subscribe();
   }
+
+  getComments(){
+    this.therapistService.getComments(this.route.snapshot.params['id']).subscribe(data => this.comments = data);
+  }
+
 
 }

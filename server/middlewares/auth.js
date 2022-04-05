@@ -1,7 +1,8 @@
 const { verifySession } = require('../services/users');
+const { getUser } = require('../storage/storage')
 
 module.exports = () => (req, res, next) => {
-    const token = req.headers['x-authorization'];
+    const token = getUser().token;
 
     try {
         if (token) {
