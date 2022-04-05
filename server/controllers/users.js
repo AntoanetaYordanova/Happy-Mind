@@ -31,8 +31,9 @@ router.post('/login', isGuest(), async (req, res) => {
     }
 });
 
-router.get('/logout', (req, res) => {
-    logout(req.user?.token);
+router.post('/logout', (req, res) => {
+    console.log('Logged Out');
+    logout(req.body.token);
     res.status(204).end();
 });
 

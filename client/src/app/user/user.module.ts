@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LogoutComponent } from './logout/logout.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -14,7 +16,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
     RegisterComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    LogoutComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

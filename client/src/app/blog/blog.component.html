@@ -1,11 +1,14 @@
-<section *ngIf="articles" class="blogContentWrapper">
-  <div>
-    <app-article
-      *ngFor="let article of articles"
-      [article]="article"
-    ></app-article>
-  </div>
-</section>
+<div class="pageWrapper">
+  <section *ngIf="articles" class="blogContentWrapper">
+    <div>
+      <app-article
+        *ngFor="let article of articles"
+        [article]="article"
+      ></app-article>
+    </div>
+  </section>
+  <app-scroll-arrow></app-scroll-arrow>
+</div>
 
 <section *ngIf="!articles">
   <app-loading></app-loading>

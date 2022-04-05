@@ -8,8 +8,14 @@
                 <li><a routerLink="/about">About</a></li>
                 <li><a routerLink="/find">Find Therapist</a></li>
                 <li><a routerLink="/articles">Articles</a></li>
-                <li><a routerLink="/user/login">Login</a></li>
-                <li><a routerLink="/user/register">Get Started</a></li>
+                <ng-container *ngIf="!hasUser">
+                    <li><a routerLink="/user/login">Login</a></li>
+                    <li class="signupBtn"><a routerLink="/user/register">Get Started</a></li>
+                </ng-container>
+                <ng-container *ngIf="hasUser">
+                    <li><a routerLink="/user/profile">Profile</a></li>
+                    <li><a routerLink="/user/logout">Logout</a></li>
+                </ng-container>
             </ul>
             
         </nav>

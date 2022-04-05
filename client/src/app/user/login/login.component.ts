@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/core/auth.service';
 import { UserService } from '../user.service';
 
 //TODO: Add favicons, and guards
@@ -11,7 +12,7 @@ import { UserService } from '../user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   faEnvelope = faEnvelope;
   faLock = faLock;
 
@@ -25,11 +26,16 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
     ) { }
 
   ngOnInit(): void {
     
+  }
+
+  ngOnDestroy(): void {
+    const user = this.authService.getUser();    
   }
 
   loginHandler(){

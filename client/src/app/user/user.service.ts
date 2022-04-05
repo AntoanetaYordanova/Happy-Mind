@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { IUser } from '../interfaces/User';
 import { environment } from '../../environments/environment'
+import { AuthService } from '../core/auth.service';
 
 const API_URL = environment.API_URL;
 
@@ -13,16 +14,20 @@ export class UserService {
   user: IUser | undefined;
 
   get hasUser():boolean{
-    return !!this.user;
+    return !!this.authService.getUser();
   }
 
-  constructor(private client: HttpClient) { }
+  constructor(private client: HttpClient, private authService: AuthService) { }
 
   register(data: { email: string, password: string }): Observable<IUser>{
-    return this.client.post<IUser>(`${API_URL}/users/register`, data).pipe(tap((user) => this.user = user));
+    return this.client.post<IUser>(`${API_URL}/users/register`, data);
   }
 
   login(data: { email: string, password: string }): Observable<IUser>{
-    return this.client.post<IUser>(`${API_URL}/users/login`, data).pipe(tap((user) => this.user = user));
+    return this.client.post<IUser>(`${API_URL}/users/login`, data);
+  }
+
+  logout() {   
+    this.authService.removeUser();
   }
 }

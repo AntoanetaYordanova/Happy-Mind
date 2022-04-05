@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { AuthActivate } from '../guards/auth.activate';
 
 
 @NgModule({
@@ -17,6 +18,9 @@ import { HeaderComponent } from './header/header.component';
   exports: [
     FooterComponent,
     HeaderComponent
+  ],
+  providers: [
+    AuthActivate
   ]
 })
 export class CoreModule { }

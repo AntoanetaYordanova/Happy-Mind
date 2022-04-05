@@ -10,6 +10,10 @@ body {
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 *, ::before, ::after {
     box-sizing: inherit;
 }

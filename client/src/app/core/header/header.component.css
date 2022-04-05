@@ -52,7 +52,7 @@ li a:hover{
     color: #42b18c;
 }
 
-li:nth-child(5) a {
+.signupBtn a {
     color: white;
     background-color: #28503f;
     padding: 4px 10px;
@@ -64,7 +64,7 @@ li:nth-child(5) a {
     top: 2px;
 }
 
-li:nth-child(5) a:hover{
+.signupBtn a:hover{
     text-decoration: none;
     background: #35886c;
 }

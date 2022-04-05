@@ -11,6 +11,7 @@
         <p class="readTheArticle">Read the whole article on <a [href]="article.source" target="_blank">{{article.source}}</a></p>
     </article>
 </section>
+<app-scroll-arrow></app-scroll-arrow>
 
 <section *ngIf="!article">
     <app-loading></app-loading>

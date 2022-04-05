@@ -1,0 +1,22 @@
+fa-icon{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    opacity: 0.5;
+    font-size: 50px;
+    display: none;
+    transition: 0.5s;
+}
+
+fa-icon:hover{
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+fa-icon.showArrow{
+    display: inline-block;
+}
+
+.iconLink{
+    color: black;
+}
