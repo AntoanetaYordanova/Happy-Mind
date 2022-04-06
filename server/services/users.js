@@ -45,7 +45,13 @@ function logout(token) {
 }
 
 async function getUsersArticles(id) {
-    return await User.findById(id).populate();
+    return await User.findById(id).populate('favoriteArticles');
+}
+
+async function removeUserArticle(userId, articleId) {
+    const user = await User.findById(userId);
+    user.favoriteArticles.splice(user.favoriteArticles.indexOf(articleId), 1);
+    await user.save();
 }
 
 function createSession(user) {
@@ -78,5 +84,6 @@ module.exports = {
     login,
     logout,
     verifySession,
-    getUsersArticles
+    getUsersArticles,
+    removeUserArticle
 };

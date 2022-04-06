@@ -7,7 +7,7 @@ import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./scroll-arrow.component.css']
 })
 export class ScrollArrowComponent implements OnInit {
-  faCircleArrowUp = faCircleArrowUp
+  faCircleArrowUp = faCircleArrowUp;
 
   constructor() { }
 

@@ -13,10 +13,12 @@
                 <img [src]="tagUrl" alt="">
                 <a>{{article.category}}</a>
             </div>
+           <ng-container *ngIf="user">
             <button *ngIf="!hasLiked" class="forLater" data-id="{{article._id}}" (click)="save($event)">
                 Save for later
             </button>
             <p #pElement [ngClass]="{hidden : !hasLiked}">Saved</p>
+           </ng-container>
         </section>
     </section>
     

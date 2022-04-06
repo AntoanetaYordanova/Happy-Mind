@@ -102,6 +102,6 @@
         </p>
       </ng-container>
     </div>
-    <button class="registerBtn">Register</button>
+    <button class="registerBtn" [disabled]="registerFormGroup.invalid">Register</button>
   </form>
 </div>

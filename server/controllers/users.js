@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { isGuest } = require('../middlewares/guards');
-const { register, login, logout, getUsersArticles } = require('../services/users');
+const { register, login, logout, getUsersArticles, removeUserArticle } = require('../services/users');
 const mapErrors = require('../utils/mapper');
 const { setUser, getUser, clearUser } = require('../storage/storage');
+const storage = require('../storage/storage');
 
 router.post('/register', isGuest(), async (req, res) => {
     try {
@@ -38,11 +39,24 @@ router.get('/logout', (req, res) => {
     res.status(204).end();
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/articles', async (req, res) => {
     const userId = getUser()._id;
     const user = await getUsersArticles(userId);
     res.json(user);
     res.status(400);
-})
+});
+
+router.delete('/articles/:id', async (req, res) => {
+    try {
+        const userId = storage.getUser()._id;
+        const articleId = req.params.id;
+        await removeUserArticle(userId, articleId);
+        res.status(204).end();
+      } catch (err) {
+        console.error(err.message);
+        const error = mapErrors(err);
+        res.status(400).json({ message: error });
+      } 
+});
 
 module.exports = router;

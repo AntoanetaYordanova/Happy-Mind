@@ -11,7 +11,7 @@ export class ScrollDirective {
   
   @HostListener('window:scroll') onScroll(){
 
-    if(window.scrollY > 480) {
+    if(window.scrollY > 380) {
       this.showArrow = true;
     } else {
       this.showArrow = false;

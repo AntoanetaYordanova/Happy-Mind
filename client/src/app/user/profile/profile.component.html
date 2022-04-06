@@ -1,1 +1,26 @@
-<p>profile works!</p>
+<ng-container *ngIf="!hasErrors">
+    <div class="contentWrapper">
+        <h4 class="greeting">Hello {{user.email}}</h4>
+        <section class="articles" *ngIf="usersArticles && usersArticles.length > 0">
+            <h5>Your saved articles</h5>
+            <article *ngFor="let article of usersArticles" class="article">
+                <a routerLink="/articles/{{article._id}}">
+                    <div>
+                        <h4>{{article.title}}</h4>
+                        <p>{{article.shortDescription | shorten : 200}}</p>
+                    </div>
+                </a>
+            <button data-id="{{article._id}}" (click)="removeHandler($event)">Remove</button>
+                
+            </article>
+        </section>
+        <section *ngIf="usersArticles && usersArticles.length == 0">
+            You don't have any saved articles yet.
+        </section>
+    </div>
+</ng-container>
+
+    <ng-container *ngIf="hasErrors">
+        <app-error></app-error>
+    </ng-container>
+

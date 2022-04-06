@@ -27,7 +27,11 @@ export class ArticlesService {
     return this.http.get<any>(`${API_URL}/articles/${id}/save`);
   }
 
-  getPopulatedUser(id:string): Observable<any> {
-    return this.http.get<any>(`${API_URL}/users/${id}`);
+  getPopulatedUser(): Observable<any> {
+    return this.http.get<any>(`${API_URL}/users/articles`);
+  }
+
+  removeArticle(id: string):Observable<any> {
+    return this.http.delete<any>(`${API_URL}/users/articles/${id}`);
   }
 }

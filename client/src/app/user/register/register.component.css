@@ -59,6 +59,10 @@
     background: #35886c;
 }
 
+.registerBtn:disabled{
+    background: #35886c;
+}
+
 p.error {
     text-align: right;
     border-radius: 0.3em;

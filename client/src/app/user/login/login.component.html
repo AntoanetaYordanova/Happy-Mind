@@ -61,6 +61,6 @@
         Password is required
       </p>
     </ng-container>
-    <button class="loginBtn">Login</button>
+    <button class="loginBtn" [disabled]="loginFormGroup.invalid">Login</button>
   </form>
 </div>

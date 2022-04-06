@@ -19,12 +19,12 @@ import { tap } from 'rxjs';
   templateUrl: './therapist-details.component.html',
   styleUrls: ['./therapist-details.component.css'],
 })
-export class TherapistDetailsComponent implements OnInit, OnDestroy {
+export class TherapistDetailsComponent implements OnInit {
   commentForm: FormGroup = this.formBuilder.group({
-    comment: new FormControl(null, [Validators.required]),
+    'comment': new FormControl(null, [Validators.required]),
   });
 
-  therapist!: ITherapistProfile | undefined;
+  therapist: ITherapistProfile | undefined = undefined;
 
   comments!: IComment[] | [];
 
@@ -48,12 +48,8 @@ export class TherapistDetailsComponent implements OnInit, OnDestroy {
     this.getComments();
   }
 
-  ngOnDestroy(): void {
-    console.log(this.comments);
-  }
 
   fetchTherapist() {
-    this.therapist = undefined;
     this.therapistService
       .getById(this.route.snapshot.params['id'])
       .subscribe((data) => (this.therapist = data));

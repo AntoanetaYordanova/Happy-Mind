@@ -1,0 +1,50 @@
+a {
+    color: rgb(0, 0, 0);
+}
+
+.contentWrapper{
+    max-width: 70%;
+    margin: 20px auto;
+    background: #FFFDF3;
+    padding: 25px;
+    border-radius: 4px;
+}
+
+h4.greeting{
+    font-size: 30px;
+    border-bottom: 1px solid rgb(147, 144, 144);
+    padding: 20px 10px;
+    background: #E4EBEB;
+    margin-top: 5px;
+}
+
+.articles{
+    background: #E4EBEB;
+    padding: 15px;
+}
+
+.articles h5{
+    font-size: 28px;
+    border-bottom: 1px solid #afbaba;
+}
+
+.article h4{
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.article{
+    border-bottom: 1px solid #afbaba;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.article:hover{
+    -webkit-box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
+box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
+}
+
+button{
+    margin-bottom: 10px;
+}

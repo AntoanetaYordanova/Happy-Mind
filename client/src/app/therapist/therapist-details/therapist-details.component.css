@@ -116,6 +116,10 @@ header h3, header p{
     color: rgb(52, 49, 49);
 }
 
+.commentForm button:disabled{
+    background: #FFFDF3;
+}
+
 button:hover{
     cursor: pointer;
     background: #FFFDF3;
@@ -173,4 +177,12 @@ button:hover{
 
 .authorWrapper p {
     margin: 0 10px;
+}
+
+p.error {
+    text-align: right;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+    margin: 0;
 }

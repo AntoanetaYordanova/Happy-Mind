@@ -5,7 +5,7 @@ import { UserService } from '../user.service';
 import { passwordMatch } from '../utils';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 
-//TODO: Add favicons, better password validator and guards
+//TODO:  better password validator 
 
 @Component({
   selector: 'app-register',

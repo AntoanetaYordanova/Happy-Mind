@@ -5,21 +5,22 @@ footer{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-top: 1px solid #d6dbdd;
     background: #F4F7F8;
 }
 
-.footerLinks{
+footer div {
     display: flex;
-    justify-content: space-around;
+}
+
+footer div h3{
+    margin-right: 20px;
 }
 
 .copyright{
     font-size: 15px;
     color: #808485;
-    position: absolute;
-    left: 0;
 }
 
 footer a{

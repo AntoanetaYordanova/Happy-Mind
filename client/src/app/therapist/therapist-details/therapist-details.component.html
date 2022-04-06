@@ -1,57 +1,82 @@
 <div class="contentWrapper">
-    <section class="leftSection">
-        <div class="imgWrapper">
-            <img [src]="therapist?.img" alt="therapist image">
-        </div>
-    </section>
-    <section class="rightSection">
-        <header>
-            <h3>{{therapist?.firstName}} {{therapist?.lastName}}</h3>
-            <p>{{therapist?.phoneNumber}}</p>
-        </header>
-        <div>
-            <section>   
-                <h5>About</h5>
-                <p>{{therapist?.description}}</p>
-                <section *ngIf="hasUser">
-                    <form class="commentForm"  [formGroup]="commentForm"
-                    (ngSubmit)="commentHandler()">
-                        <label for="comment">Leave a comment</label>
-                        <textarea name="comment" id="comment"  formControlName="comment"></textarea>
-                        <button type="submit">Send</button>
-                    </form>
-                </section>
-                <section class="comments">
-                    <h5>Comments</h5>
-                    <ng-container *ngIf="comments && comments.length > 0">
-                        <div *ngFor="let comment of comments">
-                           <div *ngIf="userId !== comment.author._id"  class="commentWrapper">
-                            <p class="commentContent"> {{comment.content}} </p>
-                            <div *ngIf="userId !== comment.author._id">
-                                <p>From:</p>
-                                <p>{{comment.author.email}}</p>
-                            </div>
-                           </div>
-                           <div *ngIf="userId === comment.author._id" class="authorWrapper">
-                            <p> {{comment.content}} </p>
-                            <button (click)="deleteComment($event)" data-id="{{comment._id}}" *ngIf="userId === comment.author._id" >Delete</button>
-                        </div>
-                        </div>          
-                    </ng-container>
-                    <div *ngIf="comments && comments.length == 0">
-                        <p>No comments yet.</p>
-                    </div>  
-                </section>
-            </section>
-            <aside class="specialties">
-                <h5>Specialties</h5>
-                <ul>
-                    <li *ngFor="let item of therapist?.qualifications">{{item}}</li>
-                </ul>
-            </aside>
-        </div>
-        
-    </section>
+  <section class="leftSection">
+    <div class="imgWrapper">
+      <img [src]="therapist?.img" alt="therapist image" />
+    </div>
+  </section>
+  <section class="rightSection">
+    <header>
+      <h3>{{ therapist?.firstName }} {{ therapist?.lastName }}</h3>
+      <p>{{ therapist?.phoneNumber }}</p>
+    </header>
+    <div>
+      <section>
+        <h5>About</h5>
+        <p>{{ therapist?.description }}</p>
+        <section *ngIf="hasUser">
+          <form
+            class="commentForm"
+            [formGroup]="commentForm"
+            (ngSubmit)="commentHandler()"
+          >
+            <label for="comment">Leave a comment</label>
+            <textarea
+              name="comment"
+              id="comment"
+              formControlName="comment"
+            ></textarea>
+            <ng-container
+              *ngIf="
+                commentForm.controls['comment'].touched &&
+                commentForm.controls['comment'].invalid
+              "
+            >
+              <p
+                class="error"
+                *ngIf="commentForm.controls['comment'].errors?.['required']"
+              >
+                Content is required
+              </p>
+            </ng-container>
+            <button type="submit" [disabled]="commentForm.invalid">Send</button>
+          </form>
+        </section>
+        <section class="comments">
+          <h5>Comments</h5>
+          <ng-container *ngIf="comments && comments.length > 0">
+            <div *ngFor="let comment of comments">
+              <div *ngIf="userId !== comment.author._id" class="commentWrapper">
+                <p class="commentContent">{{ comment.content }}</p>
+                <div *ngIf="userId !== comment.author._id">
+                  <p>From:</p>
+                  <p>{{ comment.author.email }}</p>
+                </div>
+              </div>
+              <div *ngIf="userId === comment.author._id" class="authorWrapper">
+                <p>{{ comment.content }}</p>
+                <button
+                  (click)="deleteComment($event)"
+                  data-id="{{ comment._id }}"
+                  *ngIf="userId === comment.author._id"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </ng-container>
+          <div *ngIf="comments && comments.length == 0">
+            <p>No comments yet.</p>
+          </div>
+        </section>
+      </section>
+      <aside class="specialties">
+        <h5>Specialties</h5>
+        <ul>
+          <li *ngFor="let item of therapist?.qualifications">{{ item }}</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
 </div>
 
 <app-loading *ngIf="!therapist"></app-loading>
