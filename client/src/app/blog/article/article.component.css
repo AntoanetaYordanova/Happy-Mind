@@ -95,3 +95,17 @@ h5{
     color: rgb(100, 97, 97);
     
 }
+
+.footerWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footerWrapper p {
+    margin: 0;
+}
+
+.hidden{
+    display: none;
+}

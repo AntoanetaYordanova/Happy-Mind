@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IArticle } from '../interfaces/Article';
 import { Observable } from 'rxjs';
 import { environment  } from 'src/environments/environment';
+import { IUser } from '../interfaces/User';
 
 const API_URL = environment.API_URL;
 
@@ -20,5 +21,13 @@ export class ArticlesService {
 
   getArticleById(id: string) {
     return this.http.get<IArticle>(API_URL + '/articles/' + id);
+  }
+
+  saveArticle(id:string): Observable<any> {
+    return this.http.get<any>(`${API_URL}/articles/${id}/save`);
+  }
+
+  getPopulatedUser(id:string): Observable<any> {
+    return this.http.get<any>(`${API_URL}/users/${id}`);
   }
 }

@@ -8,10 +8,16 @@
     <h2><a href="/articles/{{article._id}}">{{article.title}}</a></h2>
     <section>
         <p>{{article.shortDescription}}...<a href="/articles/{{article._id}}" class="read-more"> read more</a></p>
-        <div class="category">
-            <img [src]="tagUrl" alt="">
-            <a href="">{{article.category}}</a>
-        </div>
+        <section class="footerWrapper">
+            <div class="category">
+                <img [src]="tagUrl" alt="">
+                <a>{{article.category}}</a>
+            </div>
+            <button *ngIf="!hasLiked" class="forLater" data-id="{{article._id}}" (click)="save($event)">
+                Save for later
+            </button>
+            <p #pElement [ngClass]="{hidden : !hasLiked}">Saved</p>
+        </section>
     </section>
     
 </article>   

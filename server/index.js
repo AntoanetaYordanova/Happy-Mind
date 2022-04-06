@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
-const corsFr = require('cors');
-const cors = require('./middlewares/cors');
+const cors = require('cors');
 const catalogController = require('./controllers/catalog');
 const usersController = require('./controllers/users');
 // const therapistController = require('./controllers/therapists');
@@ -27,15 +27,14 @@ async function start() {
 
     const app = express();
     app.use(express.json());
-    app.use(corsFr({
+    app.use(cors({
         origin:  ['http://localhost:3030', 'http://localhost:4200'],
         credentials: true
     }));
-    // app.use(cors());
+    app.use(cookieParser('wtkj.C~-7rz7SCA@m9i=H9pffD'));
     app.use(auth());
     app.use('/articles', catalogController);
     app.use('/users', usersController);
-    // app.use('/therapists', therapistController);
     app.use('/therapists', therapistProfileController);
     app.use(commentController);
 

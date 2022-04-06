@@ -3,7 +3,7 @@ const { model, Schema } = require('mongoose');
 const userSchema = new Schema({
     email: { type: String, required: [true, 'Email is required'] },
     hashedPassword: { type: String, required: true },
-    favoriteAsrticles: { type : [ Schema.Types.ObjectId ], ref : 'Article', default : []}
+    favoriteArticles: { type : [ Schema.Types.ObjectId ], ref : 'Article', default : []}
 });
 
 

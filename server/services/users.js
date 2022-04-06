@@ -44,6 +44,10 @@ function logout(token) {
     blacklist.push(token);
 }
 
+async function getUsersArticles(id) {
+    return await User.findById(id).populate();
+}
+
 function createSession(user) {
     return {
         email: user.email,
@@ -73,5 +77,6 @@ module.exports = {
     register,
     login,
     logout,
-    verifySession
+    verifySession,
+    getUsersArticles
 };

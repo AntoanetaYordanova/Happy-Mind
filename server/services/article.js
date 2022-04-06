@@ -1,5 +1,5 @@
 const Article = require('../models/Article')
-
+const User = require('../models/User');
 
 async function getAll() {
     return Article.find({});
@@ -32,11 +32,17 @@ async function deleteById(id) {
     await Article.findByIdAndDelete(id);
 }
 
+async function saveForLater(userId, articleId) {
+    const user = await User.findById(userId);
+    user.favoriteArticles.push(articleId);
+    user.save();
+}
 
 module.exports = {
     getAll,
     create,
     getById,
     update,
-    deleteById
+    deleteById,
+    saveForLater
 };

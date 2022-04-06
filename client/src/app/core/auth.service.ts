@@ -12,13 +12,11 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(data));    
   }
 
-  getUser(): IUser | null{
+  getUser(){
     const user = localStorage.getItem('user');
     if(user) {
       return JSON.parse(user);
-    } else {
-      return null
-    }
+    } 
   }
 
   removeUser() {
