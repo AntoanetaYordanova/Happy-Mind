@@ -23,11 +23,15 @@ export class TherapistService {
     return this.client.get<ITherapistProfile>(`${API_URL}/therapists/${id}`);
   }
 
-  getComments(id: string) {
+  getComments(id: string): Observable<IComment[]> {
     return this.client.get<IComment[]>(`${API_URL}/therapists/${id}/comments`);
   }
 
   postComment(id: string, data: {content: string}){
     return this.client.post<ITherapistProfile>(`${API_URL}/therapists/${id}/comments`, data);
+  }
+
+  deleteComment(id:string){
+    return this.client.delete<ITherapistProfile>(`${API_URL}/therapists/comments/${id}`);
   }
 }

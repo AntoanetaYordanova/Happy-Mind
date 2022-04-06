@@ -5,6 +5,7 @@ h5{
     font-size: 25px;
 }
 
+
 .contentWrapper{
     max-width: 60%;
     margin: auto;
@@ -62,13 +63,24 @@ header h3, header p{
 }
 
 .specialties{
-    margin-left: 10px;
+    margin-left: 30px;
+}
+
+.comments{
+    background: #FFFDF3;
+    padding: 15px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.comments h5{
+    margin: 0 0 10px 0;
 }
 
 .commentForm{
     display: flex;
     flex-direction: column;
-    background: #E4EBEB;
+    background: #FFFDF3;
     margin-bottom: 15px;
     padding: 10px 20px;
     border-radius: 5px;
@@ -104,10 +116,61 @@ header h3, header p{
     color: rgb(52, 49, 49);
 }
 
-.commentForm button:hover{
+button:hover{
     cursor: pointer;
+    background: #FFFDF3;
+    border: none;
+}
+
+.commentWrapper {
+    display: flex;
+   flex-direction: column;
+   background: #b8caca;
+   border-radius: 2px;
+   border: 1px solid #9daeae;
+   margin-bottom: 15px;
+   width: 100%;
+   margin: 10px 0;
+}
+
+.commentWrapper div{
+    display: flex;
+    align-items: baseline;
+}
+
+.commentWrapper p{
+    margin: 5px;
+}
+
+.commentContent{
+    border-bottom: 1px solid #748989;
+    padding-bottom: 5px;
+}
+
+.authorWrapper{
+    display: flex;
+    flex-direction: row;
+    background: #b8caca;
+    border-radius: 2px;
+    border: 1px solid #9daeae;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.authorWrapper button {
+    color: rgb(52, 49, 49);
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 
-
-
+.authorWrapper p {
+    margin: 0 10px;
+}

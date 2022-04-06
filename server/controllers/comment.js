@@ -8,7 +8,6 @@ const { getUser } = require('../storage/storage')
 router.post('/therapists/:id/comments', async (req, res) => {
   const author = getUser()._id;
   const therapist = req.params.id;
-  console.log(req.body);
   const comment = {
     content: req.body.content,
     author,
@@ -64,7 +63,7 @@ router.put('/comments/:id', preloadComment(), isOwner(), async (req, res) => {
     }
 });
 
-router.delete('/comments/:id',preloadComment(), isOwner(), async (req, res) => {
+router.delete('/comments/:id/', async (req, res) => {
   try {
     const commentId = req.params.id;
     await commentApi.deleteComment(commentId);

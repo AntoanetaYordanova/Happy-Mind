@@ -13,13 +13,34 @@
             <section>   
                 <h5>About</h5>
                 <p>{{therapist?.description}}</p>
-                <section>
+                <section *ngIf="hasUser">
                     <form class="commentForm"  [formGroup]="commentForm"
                     (ngSubmit)="commentHandler()">
                         <label for="comment">Leave a comment</label>
                         <textarea name="comment" id="comment"  formControlName="comment"></textarea>
                         <button type="submit">Send</button>
                     </form>
+                </section>
+                <section class="comments">
+                    <h5>Comments</h5>
+                    <ng-container *ngIf="comments && comments.length > 0">
+                        <div *ngFor="let comment of comments">
+                           <div *ngIf="userId !== comment.author._id"  class="commentWrapper">
+                            <p class="commentContent"> {{comment.content}} </p>
+                            <div *ngIf="userId !== comment.author._id">
+                                <p>From:</p>
+                                <p>{{comment.author.email}}</p>
+                            </div>
+                           </div>
+                           <div *ngIf="userId === comment.author._id" class="authorWrapper">
+                            <p> {{comment.content}} </p>
+                            <button (click)="deleteComment()" *ngIf="userId === comment.author._id">Delete</button>
+                        </div>
+                        </div>          
+                    </ng-container>
+                    <div *ngIf="comments && comments.length == 0">
+                        <p>No comments yet.</p>
+                    </div>  
                 </section>
             </section>
             <aside class="specialties">

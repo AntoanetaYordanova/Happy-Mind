@@ -7,7 +7,7 @@ async function create(data) {
 }
 
 async function getCommentByTherapist(id){
-    const result = await Comment.find({'therapist' : id});
+    const result = await Comment.find({'therapist' : id}).populate('author');
     return result
 }
 

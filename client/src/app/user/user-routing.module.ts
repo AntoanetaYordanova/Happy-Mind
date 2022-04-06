@@ -30,7 +30,8 @@ const routes: Routes = [
         data: {
             authenticationRequired: false,
             authenticationFailureRedirect: '/home',
-            title: 'Login'
+            title: 'Login',
+            isLogin: true,
         }
       },
       {
