@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const corsFr = require('cors');
 const cors = require('./middlewares/cors');
 const catalogController = require('./controllers/catalog');
 const usersController = require('./controllers/users');
@@ -26,7 +27,11 @@ async function start() {
 
     const app = express();
     app.use(express.json());
-    app.use(cors());
+    app.use(corsFr({
+        origin:  ['http://localhost:3030', 'http://localhost:4200'],
+        credentials: true
+    }));
+    // app.use(cors());
     app.use(auth());
     app.use('/articles', catalogController);
     app.use('/users', usersController);

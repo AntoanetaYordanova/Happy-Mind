@@ -34,7 +34,7 @@
                            </div>
                            <div *ngIf="userId === comment.author._id" class="authorWrapper">
                             <p> {{comment.content}} </p>
-                            <button (click)="deleteComment()" *ngIf="userId === comment.author._id">Delete</button>
+                            <button (click)="deleteComment($event)" data-id="{{comment._id}}" *ngIf="userId === comment.author._id" >Delete</button>
                         </div>
                         </div>          
                     </ng-container>

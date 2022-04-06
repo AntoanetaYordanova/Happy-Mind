@@ -77,12 +77,14 @@ export class TherapistDetailsComponent implements OnInit, OnDestroy {
       .subscribe((data) => (this.comments = data));
   }
 
-  deleteComment(){
-    this.therapistService.deleteComment(this.route.snapshot.params['id']).pipe(
-      tap(() => {
-        window.location.reload();
-      })
-    )
-    .subscribe();
+  deleteComment(event: any){
+    const commentId = event.target.getAttribute('id');
+    
+    this.therapistService.deleteComment(commentId).pipe(
+        tap(() => {
+          window.location.reload();
+        })
+      )
+      .subscribe();
   }
 }

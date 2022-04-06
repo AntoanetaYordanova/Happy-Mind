@@ -46,7 +46,7 @@ router.get('/user/user-comments', isAuth(), async (req, res) => {
   }
 });
 
-router.put('/comments/:id', preloadComment(), isOwner(), async (req, res) => {
+router.put('/therapists/comments/:id', preloadComment(), isOwner(), async (req, res) => {
     const userId = req.user._id;
     const commentId = req.params.id;
     const comment = {
@@ -63,7 +63,7 @@ router.put('/comments/:id', preloadComment(), isOwner(), async (req, res) => {
     }
 });
 
-router.delete('/comments/:id/', async (req, res) => {
+router.delete('/therapists/comments/:id/', async (req, res) => {
   try {
     const commentId = req.params.id;
     await commentApi.deleteComment(commentId);
