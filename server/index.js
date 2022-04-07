@@ -5,11 +5,10 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const catalogController = require('./controllers/catalog');
 const usersController = require('./controllers/users');
-// const therapistController = require('./controllers/therapists');
 const therapistProfileController = require('./controllers/therapistProfle');
 const commentController = require('./controllers/comment');
 const auth = require('./middlewares/auth');
-const { connectionKey } = require('../../DBK/key');
+const connectionKey = 'mongodb+srv://happy-mind:fr4v163NCwLQicb0@happy-mind.o62oc.mongodb.net/happy-mind?retryWrites=true';
 
 start();
 
