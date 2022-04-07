@@ -1,4 +1,4 @@
-<section *ngIf="article" class="article">
+<section *ngIf="article && !hasErrors" class="article">
     <article class="articleWrapper">
         <div class="articleImgWrapper">
             <img [src]="article.image" alt="">
@@ -13,6 +13,8 @@
 </section>
 <app-scroll-arrow></app-scroll-arrow>
 
-<section *ngIf="!article">
+<app-error *ngIf="hasErrors"></app-error>
+
+<section *ngIf="!article && !hasErrors">
     <app-loading></app-loading>
 </section>

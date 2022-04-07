@@ -5,14 +5,13 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IComment } from 'src/app/interfaces/Comment';
 import { ITherapistProfile } from 'src/app/interfaces/TherapistProfile';
 import { TherapistService } from '../therapist.service';
 import { AuthService } from '../../core/auth.service';
 import { tap } from 'rxjs';
-
-//TODO form validation
+import { errorHandler } from 'src/app/user/utils';
 
 @Component({
   selector: 'app-therapist-details',
@@ -25,8 +24,8 @@ export class TherapistDetailsComponent implements OnInit {
   });
 
   therapist: ITherapistProfile | undefined = undefined;
-
   comments!: IComment[] | [];
+  hasErrors: boolean = false;
 
   get hasUser() {
     return this.authService.getUser();
@@ -40,7 +39,8 @@ export class TherapistDetailsComponent implements OnInit {
     private therapistService: TherapistService,
     private authService: AuthService,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -52,7 +52,10 @@ export class TherapistDetailsComponent implements OnInit {
   fetchTherapist() {
     this.therapistService
       .getById(this.route.snapshot.params['id'])
-      .subscribe((data) => (this.therapist = data));
+      .subscribe({
+        next: (data) => this.therapist = data, 
+        error: (err) => errorHandler(err, this.router, this.authService, this.hasErrors)
+      });
   }
 
   commentHandler() {
@@ -64,23 +67,24 @@ export class TherapistDetailsComponent implements OnInit {
           window.location.reload();
         })
       )
-      .subscribe();
+      .subscribe({error: (err) => errorHandler(err, this.router, this.authService, this.hasErrors)});
   }
 
   getComments() {
     this.therapistService
       .getComments(this.route.snapshot.params['id'])
-      .subscribe((data) => (this.comments = data));
+      .subscribe({
+        next: (data) => (this.comments = data),
+        error: (err) => errorHandler(err, this.router, this.authService, this.hasErrors)
+      });
   }
 
   deleteComment(event: any){
     const commentId = event.target.getAttribute('id');
     
     this.therapistService.deleteComment(commentId).pipe(
-        tap(() => {
-          window.location.reload();
-        })
+        tap(() => window.location.reload())
       )
-      .subscribe();
+      .subscribe({error: (err) => errorHandler(err, this.router, this.authService, this.hasErrors)});
   }
 }

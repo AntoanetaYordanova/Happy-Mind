@@ -1,8 +1,10 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { ArticlesService } from 'src/app/blog/articles.service';
 import { AuthService } from 'src/app/core/auth.service';
 import { IArticle } from 'src/app/interfaces/Article';
+import { errorHandler } from '../utils';
 
 @Component({
   selector: 'app-profile',
@@ -10,13 +12,14 @@ import { IArticle } from 'src/app/interfaces/Article';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  usersArticles!: IArticle[];
+  usersArticles!: IArticle[] | undefined;
   hasErrors: boolean = false;
   user = this.authService.getUser();
 
   constructor(
     private articlesService: ArticlesService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -24,27 +27,30 @@ export class ProfileComponent implements OnInit {
   }
 
   populateArticles() {
-    try {
-      this.articlesService.getPopulatedUser().subscribe((data) => {
-        if(data) {
+    this.usersArticles = undefined;
+    this.articlesService.getPopulatedUser().subscribe({
+      next: (data) => {
+        if (data) {
           this.usersArticles = data.favoriteArticles;
         }
-      });
-    } catch (err) {
-      console.error(err);
-      this.hasErrors = true;
-    }
+      },
+      error: (err) => errorHandler(err, this.router, this.authService, this.hasErrors)
+    });
   }
 
   removeHandler(event: any) {
     const articleId = event.target.getAttribute('id');
-    try {
-      this.articlesService.removeArticle(articleId).pipe(tap(() => {
-        window.location.reload();
-      })).subscribe();
-    } catch (err) {
-      console.log(err);
-      this.hasErrors = true;
-    }
+
+      this.articlesService
+        .removeArticle(articleId)
+        .pipe(
+          tap(() => {
+            window.location.reload();
+          })
+        )
+        .subscribe({
+          error: (err) => errorHandler(err, this.router, this.authService, this.hasErrors)
+        });
+    
   }
 }

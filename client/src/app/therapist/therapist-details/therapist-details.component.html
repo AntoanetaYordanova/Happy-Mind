@@ -1,4 +1,4 @@
-<div class="contentWrapper">
+<div class="contentWrapper" *ngIf="therapist && !hasErrors">
   <section class="leftSection">
     <div class="imgWrapper">
       <img [src]="therapist?.img" alt="therapist image" />
@@ -78,5 +78,7 @@
     </div>
   </section>
 </div>
+
+<app-error *ngIf="hasErrors"></app-error>
 
 <app-loading *ngIf="!therapist"></app-loading>

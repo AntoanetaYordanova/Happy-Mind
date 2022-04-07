@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { passwordMatch } from '../utils';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/core/auth.service';
 
 //TODO:  better password validator 
 
@@ -17,6 +18,7 @@ export class RegisterComponent implements OnInit {
   faLock = faLock;
   
   errorString: string = '';
+  hasErrors: boolean = true;
 
   passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6)]);
 
@@ -35,7 +37,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
     ) { }
 
   ngOnInit(): void {
@@ -52,9 +55,12 @@ export class RegisterComponent implements OnInit {
       error: (err) => {
         if(err.error.message == 'Email already exists'){
           this.errorString = err.error.message
+        } else if (err.status == 498) {
+          this.authService.removeUser();
+          this.router.navigate(['/user/login']);
         } else {
-          this.errorString = 'Error'
-        }
+          this.hasErrors = true;
+        }  
       }      
     }) 
   }

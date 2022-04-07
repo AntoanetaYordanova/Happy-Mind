@@ -1,4 +1,4 @@
-<div class="pageWrapper">
+<div class="pageWrapper" *ngIf="!hasErrors">
   <section *ngIf="articles" class="blogContentWrapper">
     <div>
       <app-article
@@ -10,6 +10,8 @@
   <app-scroll-arrow></app-scroll-arrow>
 </div>
 
-<section *ngIf="!articles">
+<app-error *ngIf="hasErrors"></app-error>
+
+<section *ngIf="!articles && !hasErrors">
   <app-loading></app-loading>
 </section>

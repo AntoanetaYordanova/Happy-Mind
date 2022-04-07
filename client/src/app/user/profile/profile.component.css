@@ -18,7 +18,7 @@ h4.greeting{
     margin-top: 5px;
 }
 
-.articles{
+.articles, .noArticles{
     background: #E4EBEB;
     padding: 15px;
 }
@@ -47,4 +47,7 @@ box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
 
 button{
     margin-bottom: 10px;
+}
+.noArticles{
+    font-size: 26px;
 }

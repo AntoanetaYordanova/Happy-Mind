@@ -15,6 +15,7 @@ export class LoginComponent {
   faLock = faLock;
 
   errorString: string = '';
+  hasErrors: boolean = false;
 
   loginFormGroup: FormGroup = this.formBuilder.group({
     'email' : new FormControl(null, [ Validators.required ]),
@@ -24,7 +25,8 @@ export class LoginComponent {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
     ) { }
 
 
@@ -39,10 +41,13 @@ export class LoginComponent {
       error: (err) => {
         if(err.error.message == 'Incorrect email or password') {
           this.errorString = 'Incorrect email or password'
+        } else if (err.status == 498) {
+          this.authService.removeUser();
+          this.router.navigate(['/user/login']);
         } else {
-          this.errorString = 'Error'
-        }
-      }
+          this.hasErrors = true;
+        }  
+      } 
     })
   }
 }

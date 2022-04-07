@@ -1,4 +1,4 @@
-<div class="contentWrapper" *ngIf="data">
+<div class="contentWrapper" *ngIf="data && !hasErrors">
    <ng-container *ngFor="let therapist of data">
     <a routerLink="/therapists/{{ therapist._id }}">
         <section  class="therapistWrapper">
@@ -20,5 +20,7 @@
    </ng-container>
    <app-scroll-arrow></app-scroll-arrow>
 </div>
+
+<app-error *ngIf="hasErrors"></app-error>
 
 <app-loading *ngIf="!data"></app-loading>
