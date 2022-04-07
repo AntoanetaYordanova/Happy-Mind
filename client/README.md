@@ -1,27 +1,34 @@
-# AngularExamProject
+# Happy-Mind
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+Happy Mind is simple Angular application for finding online therapy or self help articles. This my exam project for the SoftUni Angular course.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Not logged in users
 
-## Code scaffolding
+- View home page and about page
+- View list of articles and therapists 
+- View articles details and therapist details
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Logged in users
 
-## Build
+- Write/delete comments for therapists
+- Save/remove articles for later
+- View profile page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies and stuff
 
-## Running unit tests
+### Frontend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular 13
+- CSS
+- Fontawsome
 
-## Running end-to-end tests
+### Backend
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- MongoDB Atlas
+- Mongoose
+- Node.JS
+- Express
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

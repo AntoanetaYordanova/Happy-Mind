@@ -1,7 +1,7 @@
 <div class="formContainer">
   <app-error *ngIf="hasErrors"></app-error>
   <form
-    *ngIf="hasErrors"
+    *ngIf="!hasErrors"
     class="registerForm"
     [formGroup]="registerFormGroup"
     (ngSubmit)="registerHandler()"

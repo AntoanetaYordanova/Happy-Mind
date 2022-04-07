@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   faLock = faLock;
   
   errorString: string = '';
-  hasErrors: boolean = true;
+  hasErrors: boolean = false;
 
   passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6)]);
 
