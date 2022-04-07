@@ -31,4 +31,5 @@ Happy Mind is simple Angular application for finding online therapy or self help
 - Node.JS
 - Express
 
+To start the application install all dependecies for the client and the server with npm install. Start the server with npm start and than the client with ng s. Than navigate to http://localhost:4200 in the browser.
 
