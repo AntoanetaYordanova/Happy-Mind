@@ -23,7 +23,7 @@ export class UserService {
     return this.client.post<IUser>(`${API_URL}/users/register`, data);
   }
 
-  login(data: { email: string, password: string }): Observable<IUser>{
+  login(data: { email: string, password: string }): Observable<IUser>{    
     return this.client.post<IUser>(`${API_URL}/users/login`, data);
   }
 

@@ -1,8 +1,7 @@
 .imgContainer{
     width: 700px;
-    min-width: 400px;
     margin: auto;
-
+    width: 85%;
 }
 
 .imgContainer img {
@@ -22,7 +21,6 @@
 }
 
 article {
-    width: 720px;
     margin: auto;
     border-bottom: 1px solid rgb(167, 161, 161);
     padding-bottom: 30px;
@@ -32,10 +30,9 @@ article {
 
 .blogContentWrapper {
     width: 60%;
-    margin: auto;
+    margin: 10px auto;
     background: #f5f1ef;
-    padding-top: 20px;
-    margin-top: 10px;
+    padding: 20px 30px;
 }
 
 

@@ -6,9 +6,8 @@ import {
   OnInit,
 } from '@angular/core';
 import { IArticle } from 'src/app/interfaces/Article';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ArticlesService } from '../articles.service';
-import { tap } from 'rxjs';
 import { AuthService } from 'src/app/core/auth.service';
 import { IComment } from 'src/app/interfaces/Comment';
 
@@ -19,10 +18,10 @@ import { IComment } from 'src/app/interfaces/Comment';
 })
 export class ArticleComponent implements OnInit {
   tagUrl: string = '/assets/images/tag-solid.svg';
-  @Input() article!: IArticle;
-  faCoffee = faCoffee;
-  articles!: IComment[];
+  faCheck = faCheck;
 
+  @Input() article!: IArticle;
+  articles!: IComment[];
   hasLiked: boolean = false;
 
   constructor(
