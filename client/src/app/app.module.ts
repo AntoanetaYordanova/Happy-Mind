@@ -7,27 +7,23 @@ import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { BlogModule } from './blog/blog.module';
-import { UserModule } from './user/user.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterceptor } from './core/auth.interceptor';
-import { TherapistModule } from './therapist/therapist.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
-    BlogModule,
-    UserModule,
     FontAwesomeModule,
-    TherapistModule
   ],
   providers: [
     {

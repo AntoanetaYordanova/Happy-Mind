@@ -6,14 +6,14 @@ import { BlogComponent } from './blog.component';
 
 const routes: Routes = [
   {
-    path : 'articles',
+    path : '',
     component : BlogComponent,
     data : {
       title: 'Articles'
     }
   },
   {
-    path: 'articles/:id',
+    path: ':id',
     component: ArticleDetailsComponent,
     data : {
       title: 'Article'

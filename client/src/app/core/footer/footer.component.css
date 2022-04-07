@@ -8,6 +8,7 @@ footer{
     justify-content: space-between;
     border-top: 1px solid #d6dbdd;
     background: #F4F7F8;
+    padding-left: 5px;
 }
 
 footer div {

@@ -5,14 +5,14 @@ import { TherapistDetailsComponent } from './therapist-details/therapist-details
 
 const routes: Routes = [
   {
-    path : 'therapists/catalog',
+    path : 'catalog',
     component: CatalogComponent,
     data : {
       title : 'Therapists'
     }
   },
   {
-    path: 'therapists/:id',
+    path: ':id',
     component: TherapistDetailsComponent,
     data: {
       title : 'Therapist'

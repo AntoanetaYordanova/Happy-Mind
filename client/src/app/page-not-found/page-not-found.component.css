@@ -1,0 +1,15 @@
+.wrapper{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    margin-top: 200px;
+}
+
+
+h1 {
+    font-size: 60px;
+}
+
+p, a {
+    font-size: 30px;
+}
