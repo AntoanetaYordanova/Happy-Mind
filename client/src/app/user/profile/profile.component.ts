@@ -1,6 +1,6 @@
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { ArticlesService } from 'src/app/blog/articles.service';
 import { AuthService } from 'src/app/core/auth.service';
@@ -34,7 +34,8 @@ export class ProfileComponent implements OnInit {
   constructor(
     private articlesService: ArticlesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -60,7 +61,11 @@ export class ProfileComponent implements OnInit {
         .removeArticle(articleId)
         .pipe(
           tap(() => {
-            window.location.reload();
+            this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+            this.router.onSameUrlNavigation = 'reload';
+            this.router.navigate(['./'], {
+              relativeTo: this.route
+            })
           })
         )
         .subscribe({
