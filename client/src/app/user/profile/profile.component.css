@@ -48,6 +48,11 @@ box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
 button{
     margin-bottom: 10px;
 }
+
+button:hover{
+    cursor: pointer;
+}
+
 .noArticles{
     font-size: 26px;
 }

@@ -1,29 +1,31 @@
 <ng-container *ngIf="!hasErrors && usersArticles">
-  <div class="contentWrapper">
-    <h4 class="greeting">Hello {{ user.email }}</h4>
-    <section class="articles" >
-      <ng-container *ngIf="usersArticles && usersArticles.length > 0">
-        <h5>Your saved articles</h5>
-        <article *ngFor="let article of usersArticles" class="article">
-          <a routerLink="/articles/{{ article._id }}">
-            <div>
-              <h4>{{ article.title }}</h4>
-              <p>{{ article.shortDescription | shorten: 200 }}</p>
-            </div>
-          </a>
-          <button data-id="{{ article._id }}" (click)="removeHandler($event)">
-            Remove
-          </button>
-        </article>
-      </ng-container>
-
-      <section
-        class="noArticles"
-        *ngIf="usersArticles && usersArticles.length == 0"
-      >
-        You don't have any saved articles yet.
+  <div @enterAnim>
+    <div class="contentWrapper animation">
+      <h4 class="greeting">Hello {{ user.email }}</h4>
+      <section class="articles" >
+        <ng-container *ngIf="usersArticles && usersArticles.length > 0">
+          <h5>Your saved articles</h5>
+          <article *ngFor="let article of usersArticles" class="article">
+            <a routerLink="/articles/{{ article._id }}">
+              <div>
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.shortDescription | shorten: 200 }}</p>
+              </div>
+            </a>
+            <button data-id="{{ article._id }}" (click)="removeHandler($event)">
+              Remove
+            </button>
+          </article>
+        </ng-container>
+  
+        <section
+          class="noArticles"
+          *ngIf="usersArticles && usersArticles.length == 0"
+        >
+          You don't have any saved articles yet.
+        </section>
       </section>
-    </section>
+    </div>
   </div>
 </ng-container>
 <app-loading *ngIf="!usersArticles"></app-loading>

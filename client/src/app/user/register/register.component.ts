@@ -5,13 +5,26 @@ import { UserService } from '../user.service';
 import { passwordMatch } from '../utils';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/core/auth.service';
-
-//TODO:  better password validator 
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  animations: [
+    trigger('enterAnim', [
+      transition(':enter', [
+        query('.animation', [
+          style({ opacity: 0, transform: 'translateY(-5px)' }),
+          stagger('450ms', [
+            animate('700ms 0.1s ease-out',
+              style({ opacity: 1, transform: 'translateY(0)' }))
+          ])
+        ], { optional: true }),
+        
+      ])
+    ])
+  ]
 })
 export class RegisterComponent implements OnInit {
   faEnvelope = faEnvelope;

@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterceptor } from './core/auth.interceptor';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CoreModule,
     HttpClientModule,
     FontAwesomeModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

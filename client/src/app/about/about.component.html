@@ -1,9 +1,18 @@
-<div class="imgContainer">
-  <img [src]="imgPath" alt="" />
+<div @enterAnim>
+  <div class="animation">
+    <div class="imgContainer">
+      <img [src]="imgPath" alt="" />
+    </div>
+    <section class="about-content">
+      <div class="happy-mind-logo">
+        <a routerLink="/home"><span>Happy</span> <span>Mind</span></a>
+      </div>
+      <p>
+        is a place where you can find articles for self-help and therapists who
+        provide online therapy. The first and most important step toward healing
+        is to seek help and you are almost there.
+        <a routerLink="/therapists/catalog">Find your therapist now</a>.
+      </p>
+    </section>
+  </div>
 </div>
-<section class="about-content">
-    <div class="happy-mind-logo"><a routerLink="/home"><span>Happy</span> <span>Mind</span></a></div>
-   <p>
-    is a place where you can find articles for self-help and therapists who provide online therapy. The first and most important step toward healing is to seek help and you are almost there. <a routerLink="/therapists/catalog">Find your therapist now</a>.
-   </p>
-  </section>

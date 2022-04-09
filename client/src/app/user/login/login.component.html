@@ -1,66 +1,69 @@
-<div class="formContainer">
-  <app-error *ngIf="hasErrors"></app-error>
-  <form
-    *ngIf="!hasErrors"
-    class="loginForm"
-    [formGroup]="loginFormGroup"
-    (ngSubmit)="loginHandler()"
-  >
-    <h4 class="loginTitle">Login</h4>
-    <label for="email">Email</label>
-    <div class="emailGroup">
-      <input
-        formControlName="email"
-        type="text"
-        name="email"
-        id="email"
-        placeholder="Email"
-      />
-      <fa-icon class="emailIcon" class="emailIcon" [icon]="faEnvelope"></fa-icon>
-    </div>
-    <ng-container
-      *ngIf="
-        loginFormGroup.controls['email'].touched &&
-        loginFormGroup.controls['email'].invalid
-      "
+<div @enterAnim>
+  <div class="formContainer animation">
+    <app-error *ngIf="hasErrors"></app-error>
+    <form
+      *ngIf="!hasErrors"
+      class="loginForm"
+      [formGroup]="loginFormGroup"
+      (ngSubmit)="loginHandler()"
     >
-      <p
-        class="error"
-        *ngIf="loginFormGroup.controls['email'].errors?.['required']"
+      <h4 class="loginTitle">Login</h4>
+      <label for="email">Email</label>
+      <div class="emailGroup">
+        <input
+          formControlName="email"
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Email"
+        />
+        <fa-icon class="emailIcon" class="emailIcon" [icon]="faEnvelope"></fa-icon>
+      </div>
+      <ng-container
+        *ngIf="
+          loginFormGroup.controls['email'].touched &&
+          loginFormGroup.controls['email'].invalid
+        "
       >
-        Email is required
-      </p>
-    </ng-container>
-    <ng-container *ngIf="errorString.length > 0">
-      <p class="error">
-        {{ errorString }}
-      </p>
-    </ng-container>
-
-    <div class="passwordGroup">
-      <label for="password">Password</label>
-      <input
-        formControlName="password"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="******"
-      />
-      <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
-    </div>
-    <ng-container
-      *ngIf="
-        loginFormGroup.controls['password'].touched &&
-        loginFormGroup.controls['password'].invalid
-      "
-    >
-      <p
-        class="error"
-        *ngIf="loginFormGroup.controls['password'].errors?.['required']"
+        <p
+          class="error"
+          *ngIf="loginFormGroup.controls['email'].errors?.['required']"
+        >
+          Email is required
+        </p>
+      </ng-container>
+      <ng-container *ngIf="errorString.length > 0">
+        <p class="error">
+          {{ errorString }}
+        </p>
+      </ng-container>
+  
+      <div class="passwordGroup">
+        <label for="password">Password</label>
+        <input
+          formControlName="password"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="******"
+        />
+        <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
+      </div>
+      <ng-container
+        *ngIf="
+          loginFormGroup.controls['password'].touched &&
+          loginFormGroup.controls['password'].invalid
+        "
       >
-        Password is required
-      </p>
-    </ng-container>
-    <button class="loginBtn" [disabled]="loginFormGroup.invalid">Login</button>
-  </form>
+        <p
+          class="error"
+          *ngIf="loginFormGroup.controls['password'].errors?.['required']"
+        >
+          Password is required
+        </p>
+      </ng-container>
+      <button class="loginBtn" [disabled]="loginFormGroup.invalid">Login</button>
+    </form>
+  </div>
+  
 </div>

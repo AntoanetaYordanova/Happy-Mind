@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { ArticlesService } from 'src/app/blog/articles.service';
@@ -10,6 +11,20 @@ import { errorHandler } from '../utils';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
+  animations: [
+    trigger('enterAnim', [
+      transition(':enter', [
+        query('.animation', [
+          style({ opacity: 0, transform: 'translateY(-10px)' }),
+          stagger('450ms', [
+            animate('700ms 0.4s ease-out',
+              style({ opacity: 1, transform: 'translateY(0)' }))
+          ])
+        ], { optional: true }),
+        
+      ])
+    ])
+  ]
 })
 export class ProfileComponent implements OnInit {
   usersArticles!: IArticle[] | undefined;

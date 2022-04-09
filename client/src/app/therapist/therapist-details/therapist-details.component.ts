@@ -12,11 +12,26 @@ import { TherapistService } from '../therapist.service';
 import { AuthService } from '../../core/auth.service';
 import { tap } from 'rxjs';
 import { errorHandler } from 'src/app/user/utils';
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-therapist-details',
-  templateUrl: './therapist-details.component.html',
+  templateUrl: './therapist-details.component.html', 
   styleUrls: ['./therapist-details.component.css'],
+  animations: [
+    trigger('enterAnim', [
+      transition(':enter', [
+        query('.animation', [
+          style({ opacity: 0, transform: 'translateY(-40px)' }),
+          stagger('450ms', [
+            animate('800ms 0.5s ease-out',
+              style({ opacity: 1, transform: 'translateY(0)' }))
+          ])
+        ], { optional: true }),
+        
+      ])
+    ])
+  ]
 })
 export class TherapistDetailsComponent implements OnInit {
   commentForm: FormGroup = this.formBuilder.group({

@@ -1,107 +1,109 @@
-<div class="formContainer">
-  <app-error *ngIf="hasErrors"></app-error>
-  <form
-    *ngIf="!hasErrors"
-    class="registerForm"
-    [formGroup]="registerFormGroup"
-    (ngSubmit)="registerHandler()"
-  >
-    <h4 class="signUpTitle">Sign Up</h4>
-    <div class="emailGroup">
-      <label for="email">Email</label>
-      <input
-        formControlName="email"
-        type="text"
-        name="email"
-        id="email"
-        placeholder="Email"
-      />
-      <fa-icon
-        class="emailIcon"
-        class="emailIcon"
-        [icon]="faEnvelope"
-      ></fa-icon>
-    </div>
-    <ng-container
-      *ngIf="
-        registerFormGroup.controls['email'].touched &&
-        registerFormGroup.controls['email'].invalid
-      "
+<div @enterAnim>
+  <div class="formContainer animation">
+    <app-error *ngIf="hasErrors"></app-error>
+    <form
+      *ngIf="!hasErrors"
+      class="registerForm"
+      [formGroup]="registerFormGroup"
+      (ngSubmit)="registerHandler()"
     >
-      <p
-        class="error"
-        *ngIf="registerFormGroup.controls['email'].errors?.['required']"
-      >
-        Email is required
-      </p>
-      <p
-        class="error"
-        *ngIf="registerFormGroup.controls['email'].errors?.['email']"
-      >
-        Please enter a valid email
-      </p>
-    </ng-container>
-    <ng-container *ngIf="errorString.length > 0">
-      <p class="error">
-        {{ errorString }}
-      </p>
-    </ng-container>
-    <div formGroupName="passwords">
-      <div class="passwordGroup">
-        <label for="password">Password</label>
+      <h4 class="signUpTitle">Sign Up</h4>
+      <div class="emailGroup">
+        <label for="email">Email</label>
         <input
-          formControlName="password"
+          formControlName="email"
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Email"
+        />
+        <fa-icon
+          class="emailIcon"
+          class="emailIcon"
+          [icon]="faEnvelope"
+        ></fa-icon>
+      </div>
+      <ng-container
+        *ngIf="
+          registerFormGroup.controls['email'].touched &&
+          registerFormGroup.controls['email'].invalid
+        "
+      >
+        <p
+          class="error"
+          *ngIf="registerFormGroup.controls['email'].errors?.['required']"
+        >
+          Email is required
+        </p>
+        <p
+          class="error"
+          *ngIf="registerFormGroup.controls['email'].errors?.['email']"
+        >
+          Please enter a valid email
+        </p>
+      </ng-container>
+      <ng-container *ngIf="errorString.length > 0">
+        <p class="error">
+          {{ errorString }}
+        </p>
+      </ng-container>
+      <div formGroupName="passwords">
+        <div class="passwordGroup">
+          <label for="password">Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="******"
+          />
+        <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
+        </div>
+        <ng-container
+          *ngIf="
+            passwordGroup.controls['password'].touched &&
+            passwordGroup.controls['password'].invalid
+          "
+        >
+          <p
+            class="error"
+            *ngIf="passwordGroup.controls['password'].errors?.['required']"
+          >
+            Password is required
+          </p>
+          <p
+            class="error"
+            *ngIf="passwordGroup.controls['password'].errors?.['minlength']"
+          >
+            Password must be at least 6 characters long
+          </p>
+        </ng-container>
+        <div class="passwordGroup">
+          <label for="rePass">Repeat Password</label>
+        <input
+          formControlName="rePass"
           type="password"
-          name="password"
-          id="password"
+          name="rePass"
+          id="rePass"
           placeholder="******"
         />
-      <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
+        <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
+        </div>
+        <ng-container
+          *ngIf="
+            passwordGroup.controls['rePass'].touched &&
+            passwordGroup.controls['rePass'].invalid
+          "
+        >
+          <p
+            class="error"
+            *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']"
+          >
+            Passwords don't match
+          </p>
+        </ng-container>
       </div>
-      <ng-container
-        *ngIf="
-          passwordGroup.controls['password'].touched &&
-          passwordGroup.controls['password'].invalid
-        "
-      >
-        <p
-          class="error"
-          *ngIf="passwordGroup.controls['password'].errors?.['required']"
-        >
-          Password is required
-        </p>
-        <p
-          class="error"
-          *ngIf="passwordGroup.controls['password'].errors?.['minlength']"
-        >
-          Password must be at least 6 characters long
-        </p>
-      </ng-container>
-      <div class="passwordGroup">
-        <label for="rePass">Repeat Password</label>
-      <input
-        formControlName="rePass"
-        type="password"
-        name="rePass"
-        id="rePass"
-        placeholder="******"
-      />
-      <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
-      </div>
-      <ng-container
-        *ngIf="
-          passwordGroup.controls['rePass'].touched &&
-          passwordGroup.controls['rePass'].invalid
-        "
-      >
-        <p
-          class="error"
-          *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']"
-        >
-          Passwords don't match
-        </p>
-      </ng-container>
-    </div>
-    <button class="registerBtn" [disabled]="registerFormGroup.invalid">Register</button>
-  </form>
+      <button class="registerBtn" [disabled]="registerFormGroup.invalid">Register</button>
+    </form>
+  </div>
 </div>

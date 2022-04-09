@@ -1,5 +1,5 @@
-<section *ngIf="article && !hasErrors" class="article">
-    <article class="articleWrapper">
+<section *ngIf="article && !hasErrors" class="article" @enterAnim>
+    <article class="articleWrapper animation">
         <div class="articleImgWrapper">
             <img [src]="article.image" alt="">
         </div>

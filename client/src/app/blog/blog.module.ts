@@ -7,8 +7,6 @@ import { SharedModule } from '../shared/shared.module';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
-
 @NgModule({
   declarations: [
     BlogComponent,

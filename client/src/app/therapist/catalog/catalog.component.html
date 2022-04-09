@@ -1,7 +1,7 @@
-<div class="contentWrapper" *ngIf="data && !hasErrors">
+<div class="contentWrapper" *ngIf="data && !hasErrors" @enterAnim>
    <ng-container *ngFor="let therapist of data">
-    <a routerLink="/therapists/{{ therapist._id }}">
-        <section  class="therapistWrapper">
+    <a routerLink="/therapists/{{ therapist._id }}" >
+        <section  class="therapistWrapper animation">
           <div class="imgContainer">
             <div class="imgWrapper">
                 <img [src]="therapist.img" alt="therapist image" />

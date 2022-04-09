@@ -1,3 +1,4 @@
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,7 +9,21 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    trigger('enterAnim', [
+      transition(':enter', [
+        query('.animation', [
+          style({ opacity: 0, transform: 'translateY(-5px)' }),
+          stagger('450ms', [
+            animate('700ms 0.1s ease-out',
+              style({ opacity: 1, transform: 'translateY(0)' }))
+          ])
+        ], { optional: true }),
+        
+      ])
+    ])
+  ]
 })
 export class LoginComponent {
   faEnvelope = faEnvelope;
