@@ -46,6 +46,10 @@ export class ProfileComponent implements OnInit {
     this.usersArticles = undefined;
     this.articlesService.getPopulatedUser().subscribe({
       next: (data) => {
+        if(data == null) {
+          this.authService.removeUser();
+          this.router.navigate(['/login']);
+        }
         if (data) {
           this.usersArticles = data.favoriteArticles;
         }
