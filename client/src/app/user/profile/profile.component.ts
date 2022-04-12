@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.populateArticles();
   }
 
@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
       next: (data) => {
         if(data == null) {
           this.authService.removeUser();
-          this.router.navigate(['/login']);
+          this.router.navigate(['/user/login']);
         }
         if (data) {
           this.usersArticles = data.favoriteArticles;
