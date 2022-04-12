@@ -5,7 +5,7 @@ import { tap } from 'rxjs';
 import { ArticlesService } from 'src/app/blog/articles.service';
 import { AuthService } from 'src/app/core/auth.service';
 import { IArticle } from 'src/app/interfaces/Article';
-import { errorHandler } from '../utils';
+import { errorHandler } from '../../utils/utils';
 
 @Component({
   selector: 'app-profile',

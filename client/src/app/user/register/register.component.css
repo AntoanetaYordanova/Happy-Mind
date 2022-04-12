@@ -63,7 +63,12 @@
     background: #35886c;
 }
 
-p.error {
+.error {
+    display: none;
+}
+
+.error-container p.error:first-child {
+    display: block;
     text-align: right;
     border-radius: 0.3em;
     color: red;

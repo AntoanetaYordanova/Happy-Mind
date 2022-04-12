@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { AuthService } from 'src/app/core/auth.service';
 import { ITherapistProfile } from 'src/app/interfaces/TherapistProfile';
-import { errorHandler } from 'src/app/user/utils';
+import { errorHandler } from 'src/app/utils/utils';
 import { TherapistService } from '../therapist.service';
 
 @Component({

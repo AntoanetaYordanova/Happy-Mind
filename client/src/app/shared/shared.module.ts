@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ScrollArrowComponent } from './scroll-arrow/scroll-arrow.component';
 import { ScrollDirective } from './scroll.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ShortenPipe } from './shorten.pipe';
+import { ShortenPipe } from './pipes/shorten.pipe';
 
 
 
@@ -27,7 +27,8 @@ import { ShortenPipe } from './shorten.pipe';
     LoadingComponent,
     ErrorComponent,
     ScrollArrowComponent,
-    ShortenPipe
+    ShortenPipe,
+    
   ]
 })
 export class SharedModule { }

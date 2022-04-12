@@ -3,7 +3,7 @@ import { ArticlesService } from './articles.service';
 import { IArticle } from '../interfaces/Article';
 import { AuthService } from '../core/auth.service';
 import { Router } from '@angular/router';
-import { errorHandler } from '../user/utils';
+import { errorHandler } from '../utils/utils';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 
 @Component({

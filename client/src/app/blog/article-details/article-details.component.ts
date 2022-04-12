@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import { IArticle } from 'src/app/interfaces/Article';
-import { errorHandler } from 'src/app/user/utils';
+import { errorHandler } from 'src/app/utils/utils';
 import { ArticlesService } from '../articles.service';
 
 @Component({

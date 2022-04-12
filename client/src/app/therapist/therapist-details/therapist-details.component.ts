@@ -11,7 +11,7 @@ import { ITherapistProfile } from 'src/app/interfaces/TherapistProfile';
 import { TherapistService } from '../therapist.service';
 import { AuthService } from '../../core/auth.service';
 import { tap } from 'rxjs';
-import { errorHandler } from 'src/app/user/utils';
+import { errorHandler } from 'src/app/utils/utils';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 
 @Component({

@@ -57,7 +57,7 @@
             id="password"
             placeholder="******"
           />
-        <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
+          <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
         </div>
         <ng-container
           *ngIf="
@@ -65,29 +65,43 @@
             passwordGroup.controls['password'].invalid
           "
         >
+         <div class="error-container">
           <p
-            class="error"
-            *ngIf="passwordGroup.controls['password'].errors?.['required']"
-          >
-            Password is required
-          </p>
-          <p
-            class="error"
-            *ngIf="passwordGroup.controls['password'].errors?.['minlength']"
-          >
-            Password must be at least 6 characters long
-          </p>
+          class="error"
+          *ngIf="passwordGroup.controls['password'].errors?.['required']"
+        >
+          Password is required
+        </p>
+        <p
+          class="error"
+          *ngIf="passwordGroup.controls['password'].errors?.['minlength']"
+        >
+          Password must be at least 6 characters long.
+        </p>
+        <p
+          class="error"
+          *ngIf="passwordGroup.controls['password'].errors?.['isInvalidPassword']"
+        >
+          Password can contain only numbers and latin letters.
+        </p>
+        <p
+          class="error"
+          *ngIf="passwordGroup.controls['password'].errors?.['hasForbiddenCharacters']"
+        >
+          Password can contain only letters and numbers.
+        </p>  
+         </div>
         </ng-container>
         <div class="passwordGroup">
           <label for="rePass">Repeat Password</label>
-        <input
-          formControlName="rePass"
-          type="password"
-          name="rePass"
-          id="rePass"
-          placeholder="******"
-        />
-        <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
+          <input
+            formControlName="rePass"
+            type="password"
+            name="rePass"
+            id="rePass"
+            placeholder="******"
+          />
+          <fa-icon class="lockIcon" [icon]="faLock"></fa-icon>
         </div>
         <ng-container
           *ngIf="
@@ -103,7 +117,9 @@
           </p>
         </ng-container>
       </div>
-      <button class="registerBtn" [disabled]="registerFormGroup.invalid">Register</button>
+      <button class="registerBtn" [disabled]="registerFormGroup.invalid">
+        Register
+      </button>
     </form>
   </div>
 </div>

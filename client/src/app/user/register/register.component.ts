@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
-import { passwordMatch } from '../utils';
+import { passwordMatch, hasForbiddenCharacters, passwordCheck } from '../../utils/utils';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/core/auth.service';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   errorString: string = '';
   hasErrors: boolean = false;
 
-  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6)]);
+  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6), hasForbiddenCharacters, passwordCheck]);
 
   registerFormGroup: FormGroup =  this.formBuilder.group({
     'email': new FormControl(null, [Validators.required, Validators.email]),
