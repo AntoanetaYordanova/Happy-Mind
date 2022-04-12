@@ -29,7 +29,8 @@
           registerFormGroup.controls['email'].invalid
         "
       >
-        <p
+        <div class="error-container">
+          <p
           class="error"
           *ngIf="registerFormGroup.controls['email'].errors?.['required']"
         >
@@ -41,6 +42,7 @@
         >
           Please enter a valid email
         </p>
+        </div>
       </ng-container>
       <ng-container *ngIf="errorString.length > 0">
         <p class="error">
