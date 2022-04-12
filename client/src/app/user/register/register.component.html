@@ -111,6 +111,14 @@
             passwordGroup.controls['rePass'].invalid
           "
         >
+        <div class="error-container">
+          <p
+            class="error"
+            *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']"
+          >
+            Passwords don't match
+          </p>
+        </div>
           <p
             class="error"
             *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']"
