@@ -7,7 +7,7 @@ export class AuthActivate implements CanActivate{
     constructor(private router: Router, private userService: UserService){}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree  {
-        const { authenticationRequired, authenticationFailureRedirect, isLogin } = route.data;
+        const { authenticationRequired, authenticationFailureRedirect } = route.data;
 
         if(typeof authenticationRequired == 'boolean' && 
             authenticationRequired === this.userService.hasUser){
