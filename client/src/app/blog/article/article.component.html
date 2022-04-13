@@ -14,12 +14,12 @@
                 <a>{{article.category}}</a>
             </div>
            <ng-container *ngIf="user">
-            <button *ngIf="!hasLiked" class="forLater" data-id="{{article._id}}" (click)="save($event)">
+            <button [ngClass]="{'hidden' : hasLiked}" class="forLater" data-id="{{article._id}}" (click)="save($event)">
                 Save for later
             </button>
             <p #pElement [ngClass]="{hidden : !hasLiked}">
-                <fa-icon class="emailIcon" class="emailIcon" [icon]="faCheck"></fa-icon>
-                Saved
+                <fa-icon class="checkIcon" [icon]="faCheck"></fa-icon>
+                <span data-id="{{article._id}}" (click)="removeArticle($event)" (mouseenter)="enter($event)" (mouseleave)="leave($event)">Saved</span>      
             </p>
            </ng-container>
         </section>

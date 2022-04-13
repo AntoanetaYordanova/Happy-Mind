@@ -36,6 +36,15 @@ export class ArticleComponent implements OnInit {
     }
   }
 
+  getUsersArticles(id: string) {
+    this.articleService.getPopulatedUser().subscribe((data) => {
+      if (data) {
+        this.articles = data.favoriteArticles;  
+        this.hasLiked = this.articles.some((v) => v._id == this.article._id);
+      }
+    });
+  }
+
   save(event: any) {
     this.articleService
       .saveArticle(event.target.getAttribute('id'))
@@ -46,12 +55,20 @@ export class ArticleComponent implements OnInit {
     event.target.classList.add('hidden');
   }
 
-  getUsersArticles(id: string) {
-    this.articleService.getPopulatedUser().subscribe((data) => {
-      if (data) {
-        this.articles = data.favoriteArticles;  
-        this.hasLiked = this.articles.some((v) => v._id == this.article._id);
-      }
-    });
+  removeArticle(event: any) {
+    this.articleService.removeArticle(event.target.getAttribute('id')).subscribe();
+    event.target.parentElement.previousElementSibling.classList.remove('hidden');
+    event.target.parentElement.previousElementSibling.removeAttribute('disabled');
+    event.target.parentElement.classList.add('hidden');
   }
+
+  enter(event: any) {
+    event.target.textContent = 'Remove article';
+    event.target.previousElementSibling.classList.add('hidden');
+  }
+
+  leave(event: any) {
+    event.target.textContent = 'Saved';
+    event.target.previousElementSibling.classList.remove('hidden');
+  }  
 }

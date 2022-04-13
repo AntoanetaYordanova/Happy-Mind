@@ -66,6 +66,21 @@ h5{
     font-size: 27px;
 }
 
+button{
+    background: #EBDED8;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #cabeb8;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #d6cbc5;
+}
+
 .category{
     background: #ebded8;
     display: inline-block;
@@ -101,8 +116,19 @@ h5{
 
 .footerWrapper p {
     margin: 0;
+    background: #EBDED8;
+    padding: 5px 10px;
+    border-radius: 20px;
 }
 
 .hidden{
     display: none;
+}
+
+.checkIcon{
+    margin-right: 5px;
+}
+
+span:hover{
+    cursor: pointer;
 }

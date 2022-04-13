@@ -84,15 +84,15 @@
             </p>
             <p
               class="error"
-              *ngIf="passwordGroup.controls['password'].errors?.['isInvalidPassword']"
+              *ngIf="passwordGroup.controls['password'].errors?.['hasForbiddenCharacters']"
             >
               Password can contain only numbers and latin letters.
             </p>
             <p
               class="error"
-              *ngIf="passwordGroup.controls['password'].errors?.['hasForbiddenCharacters']"
+              *ngIf="passwordGroup.controls['password'].errors?.['isInvalidPassword']"
             >
-              Password can contain only letters and numbers.
+              Password must contain at least one letter and one number.
             </p>
           </div>
         </ng-container>
