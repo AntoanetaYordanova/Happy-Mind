@@ -31,23 +31,25 @@
       >
         <div class="error-container">
           <p
-          class="error"
-          *ngIf="registerFormGroup.controls['email'].errors?.['required']"
-        >
-          Email is required
-        </p>
-        <p
-          class="error"
-          *ngIf="registerFormGroup.controls['email'].errors?.['email']"
-        >
-          Please enter a valid email
-        </p>
+            class="error"
+            *ngIf="registerFormGroup.controls['email'].errors?.['required']"
+          >
+            Email is required
+          </p>
+          <p
+            class="error"
+            *ngIf="registerFormGroup.controls['email'].errors?.['email']"
+          >
+            Please enter a valid email
+          </p>
         </div>
       </ng-container>
       <ng-container *ngIf="errorString.length > 0">
-        <p class="error">
-          {{ errorString }}
-        </p>
+        <div class="error-container">
+          <p class="error">
+            {{ errorString }}
+          </p>
+        </div>
       </ng-container>
       <div formGroupName="passwords">
         <div class="passwordGroup">
@@ -67,32 +69,32 @@
             passwordGroup.controls['password'].invalid
           "
         >
-         <div class="error-container">
-          <p
-          class="error"
-          *ngIf="passwordGroup.controls['password'].errors?.['required']"
-        >
-          Password is required
-        </p>
-        <p
-          class="error"
-          *ngIf="passwordGroup.controls['password'].errors?.['minlength']"
-        >
-          Password must be at least 6 characters long.
-        </p>
-        <p
-          class="error"
-          *ngIf="passwordGroup.controls['password'].errors?.['isInvalidPassword']"
-        >
-          Password can contain only numbers and latin letters.
-        </p>
-        <p
-          class="error"
-          *ngIf="passwordGroup.controls['password'].errors?.['hasForbiddenCharacters']"
-        >
-          Password can contain only letters and numbers.
-        </p>  
-         </div>
+          <div class="error-container">
+            <p
+              class="error"
+              *ngIf="passwordGroup.controls['password'].errors?.['required']"
+            >
+              Password is required
+            </p>
+            <p
+              class="error"
+              *ngIf="passwordGroup.controls['password'].errors?.['minlength']"
+            >
+              Password must be at least 6 characters long.
+            </p>
+            <p
+              class="error"
+              *ngIf="passwordGroup.controls['password'].errors?.['isInvalidPassword']"
+            >
+              Password can contain only numbers and latin letters.
+            </p>
+            <p
+              class="error"
+              *ngIf="passwordGroup.controls['password'].errors?.['hasForbiddenCharacters']"
+            >
+              Password can contain only letters and numbers.
+            </p>
+          </div>
         </ng-container>
         <div class="passwordGroup">
           <label for="rePass">Repeat Password</label>
@@ -111,14 +113,14 @@
             passwordGroup.controls['rePass'].invalid
           "
         >
-        <div class="error-container">
-          <p
-            class="error"
-            *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']"
-          >
-            Passwords don't match
-          </p>
-        </div>
+          <div class="error-container">
+            <p
+              class="error"
+              *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']"
+            >
+              Passwords don't match
+            </p>
+          </div>
           <p
             class="error"
             *ngIf="passwordGroup.controls['rePass'].errors?.['passwordMissmatch']"
