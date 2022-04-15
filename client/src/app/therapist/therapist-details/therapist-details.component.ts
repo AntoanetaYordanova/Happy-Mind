@@ -98,7 +98,13 @@ export class TherapistDetailsComponent implements OnInit {
     const commentId = event.target.getAttribute('id');
     
     this.therapistService.deleteComment(commentId).pipe(
-        tap(() => window.location.reload())
+        tap(() => {
+          this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+          this.router.onSameUrlNavigation = 'reload';
+          this.router.navigate(['./'], {
+            relativeTo: this.route
+          })
+        })
       )
       .subscribe({error: (err) => errorHandler(err, this.router, this.authService, this.hasErrors)});
   }
