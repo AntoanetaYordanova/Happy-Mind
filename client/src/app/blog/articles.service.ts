@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { IArticle } from '../interfaces/Article';
 import { Observable } from 'rxjs';
 import { environment  } from 'src/environments/environment';
-import { IUser } from '../interfaces/User';
 
 const API_URL = environment.API_URL;
 
