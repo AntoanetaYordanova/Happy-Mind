@@ -1,5 +1,4 @@
 .homeContainer {
-    /* background: #AEC4C4; */
     padding: 50px 0 50px 0;
     min-height: 100vh;
     display: flex;
@@ -16,7 +15,7 @@
     flex: 1;
 }
 .imgWrapper {
-    width: 60%;
+    width: 80%;
     margin: auto ;
 }
 
