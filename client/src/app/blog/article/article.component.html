@@ -1,13 +1,13 @@
 
  <article class="animation">
-    <a href="articles/{{article._id}}">
+    <a routerLink="articles/{{article._id}}">
         <div class="imgContainer">
             <img src="{{article.image}}" alt="">
         </div>
     </a>
-    <h2><a href="articles/{{article._id}}">{{article.title}}</a></h2>
+    <h2><a routerLink="articles/{{article._id}}">{{article.title}}</a></h2>
     <section>
-        <p>{{article.shortDescription}}...<a href="articles/{{article._id}}" class="read-more"> read more</a></p>
+        <p>{{article.shortDescription}}...<a routerLink="/articles/{{article._id}}" class="read-more"> read more</a></p>
         <section class="footerWrapper">
             <div class="category">
                 <img [src]="tagUrl" alt="">
