@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit{
 
   constructor(private authService: AuthService){}
 
-  backgroundImage: String = 'https://images.unsplash.com/photo-1607551848581-7ee851bf978b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80'
+  backgroundImage: String = 'https://images.unsplash.com/photo-1559608622-d443df453289?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
 
   ngOnInit(): void {
   }
