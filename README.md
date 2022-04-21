@@ -31,4 +31,4 @@ Happy Mind is simple Angular application for finding online therapy or self help
 - Node.JS
 - Express
 
-##See the app on https://antoanetayordanova.github.io/Happy-Mind
+## See the app on https://antoanetayordanova.github.io/Happy-Mind
