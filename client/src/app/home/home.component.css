@@ -8,15 +8,36 @@
     flex-wrap: wrap;
 }
 
+
+@media screen and (max-width: 1250px){
+   .homeContainer{
+       flex-direction: column-reverse;
+       padding: 20px;
+   }
+}
+
 .homeContainer section{
     display: flex;
     flex-direction: column;
     width: 50%;
     flex: 1;
 }
+
+@media screen and (max-width: 1250px){
+    .homeContainer section{
+        width: 95%;
+    }
+}
+
 .imgWrapper {
-    width: 80%;
+    width: 85%;
     margin: auto ;
+}
+
+@media screen and (max-width: 1250px){
+    .imgWrapper{
+        width: 100%;
+    }
 }
 
 img{
@@ -33,12 +54,20 @@ img{
     margin: auto;
     color: #1B392C;
 }
-
+ 
 .quoteWrapper blockquote{
     /* max-width: 85%; */
-    font-size: 78px;
+    font-size: 4.5rem;
     margin-left: 100px;
 }
+
+@media screen and (max-width: 1250px){
+    .quoteWrapper blockquote{
+      margin: 15px;
+    }
+}
+
+
 .quoteWrapper h4{
     text-align: right;
     font-size: 40px;

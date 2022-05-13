@@ -14,6 +14,36 @@ html{
     scroll-behavior: smooth;
 }
 
+@media screen and (max-width: 1500px){
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1250px){
+    html {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    html {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    html {
+        font-size: 10px;
+    }
+}
+
 *, ::before, ::after {
     box-sizing: inherit;
 }

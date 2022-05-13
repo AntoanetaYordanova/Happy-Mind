@@ -14,10 +14,16 @@ header{
     z-index: 10;
 }
 
+@media screen and (max-width: 550px){
+    header{
+        flex-direction: column;
+    }
+ }
+
 
 .happy-mind-logo{
     margin-left: 12px;
-    font-size: 28px;
+    font-size: 1.8rem;
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: 'Nanum Myeongjo', serif;
@@ -37,9 +43,22 @@ ul {
     display: flex;
     margin-right: 10px;
 }
+
+@media screen and (max-width: 550px){
+    ul{
+        flex-direction: column;
+        align-items: center;
+    }
+ }
+
+ul div {
+    display: flex;
+}
+
+
 li {
     margin-right: 15px;
-    font-size: 22px;
+    font-size: 1.4rem;
     transition: 0.3s;
 }
 
@@ -63,6 +82,12 @@ li a:hover{
     position: relative;
     top: 2px;
 }
+
+@media screen and (max-width: 550px){
+    .signupBtn{
+        margin-top: 10px;
+    }
+ }
 
 .signupBtn a:hover{
     text-decoration: none;
