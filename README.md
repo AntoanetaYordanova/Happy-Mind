@@ -1,6 +1,6 @@
 # Happy-Mind
 
-Happy Mind is simple Angular application for finding online therapy or self help articles. This is my exam project for SoftUni Angular course.
+Happy Mind is simple Angular application for finding online therapy or self help articles. This is my exam project for SoftUni Angular course. 
 
 ## Features
 
@@ -31,4 +31,5 @@ Happy Mind is simple Angular application for finding online therapy or self help
 - Node.JS
 - Express
 
-### See the app on https://antoanetayordanova.github.io/Happy-Mind
+### App live demo:  https://antoanetayordanova.github.io/Happy-Mind
+
