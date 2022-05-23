@@ -14,7 +14,7 @@ header{
     z-index: 10;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 680px){
     header{
         flex-direction: column;
     }
@@ -23,12 +23,18 @@ header{
 
 .happy-mind-logo{
     margin-left: 12px;
-    font-size: 1.8rem;
+    font-size: 28px;
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: 'Nanum Myeongjo', serif;
     font-weight: bold;
 }
+
+@media screen and (max-width: 1500px){
+    .happy-mind-logo {
+        font-size: 26px;
+    }
+ }
 
 .happy-mind-logo span:nth-child(1) {
     color: #EF7C8E;
@@ -44,7 +50,7 @@ ul {
     margin-right: 10px;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 680px){
     ul{
         flex-direction: column;
         align-items: center;
@@ -58,9 +64,21 @@ ul div {
 
 li {
     margin-right: 15px;
-    font-size: 1.4rem;
+    font-size: 22px;
     transition: 0.3s;
 }
+
+@media screen and (max-width: 1500px){
+    li, .signupBtn a{
+        font-size: 20px;
+    }
+ }
+
+ @media screen and (max-width: 850px){
+    li, .signupBtn a {
+        font-size: 18px;
+    }
+ }
 
 li a{
     color: #1B392C;
@@ -83,7 +101,7 @@ li a:hover{
     top: 2px;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 680px){
     .signupBtn{
         margin-top: 10px;
     }

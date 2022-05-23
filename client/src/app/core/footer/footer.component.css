@@ -24,6 +24,18 @@ footer div h3{
     color: #808485;
 }
 
+@media screen and (max-width: 700px) {
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .copyright {
+        font-size: 13px;
+    }
+}
+
 footer a{
     font-family: 'DM Sans', sans-serif;
     font-weight: normal;
@@ -34,6 +46,18 @@ footer a{
     transition: 0.2s;
 }
 
+@media screen and (max-width: 700px){
+    footer a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    footer a {
+        font-size: 17px;
+    }
+}
+
 footer a:hover{
     color: #2b6451;   
 }
@@ -42,3 +66,4 @@ ul {
     padding: 0 0 5px 0;
     margin: 0;
 }
+

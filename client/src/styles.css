@@ -38,11 +38,11 @@ html{
     }
 }
 
-@media screen and (max-width: 650px){
+/* @media screen and (max-width: 650px){
     html {
         font-size: 10px;
     }
-}
+} */
 
 *, ::before, ::after {
     box-sizing: inherit;

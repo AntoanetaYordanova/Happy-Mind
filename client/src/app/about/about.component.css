@@ -1,5 +1,6 @@
 .imgContainer {
-    width: 800px;
+    max-width: 900px;
+    width: 90%;
     margin: auto;
     margin-top: 30px;
 }
@@ -13,8 +14,7 @@ img{
     border-radius: 11px;
 }
 
-a, .imgContainer div h5 {
-    font-size: 15px;
+a{
     font-style: italic;
     text-decoration: none;
     color: rgb(100, 100, 100);
@@ -23,12 +23,12 @@ a, .imgContainer div h5 {
 .happy-mind-logo {
     display: inline;
     background: rgb(255,253,245);
-    padding: 15px 10px 10px 10px;
+    padding: 20px 10px 10px 10px;
     border-radius: 10px;
 }
 
 section.about-content .happy-mind-logo a{
-    font-size: 40px;
+    font-size: 3rem;
     padding-top: 20px;
     padding-bottom: 20px;
     text-decoration: none;
@@ -49,15 +49,45 @@ section.about-content .happy-mind-logo a{
 }
 
 .about-content {
-    width: 50%;
+    width: 60%;
     margin: auto;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 5%;
 }
 
+@media screen and (max-width: 1500px) {
+    .about-content {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .about-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .about-content {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .about-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .about-content {
+        width: 90%;
+    }
+}
+
 .about-content p, .about-content a{
-    font-size: 30px;
+    font-size: 2.5rem;
 }
 .about-content a{
     color: rgb(69, 68, 68); 
