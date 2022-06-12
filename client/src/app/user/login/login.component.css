@@ -96,3 +96,27 @@ fa-icon{
     right: 10px;
     top: 51px;
 }
+
+@media screen and (max-width: 1200px) {
+    .loginForm {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .loginForm {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .loginForm {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .loginForm {
+        width: 75%;
+    }
+}

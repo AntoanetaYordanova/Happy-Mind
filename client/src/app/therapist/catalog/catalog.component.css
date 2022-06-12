@@ -7,10 +7,6 @@ a {
     margin: 30px auto;
 }
 
-.imgWrapper {
-    max-width: 150px;
-}
-
 .imgWrapper img{
     width: 100%;
 }
@@ -21,6 +17,30 @@ a {
     background: #E4EBEB;
     padding: 10px 10px;
     transition: 0.3s;
+}
+
+@media screen and (max-width: 1450px) {
+    .therapistWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .phone-number {
+        display: none;
+    }
+
+    /* .imgContainer {
+        order: 1;
+    }
+
+    .contactContainer {
+        order: 2;
+    }
+
+    .descritpionContainer {
+        order: 3;
+    } */
+
 }
 
 .therapistWrapper:hover{
@@ -37,7 +57,7 @@ box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
 .contactContainer{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -45,14 +65,26 @@ box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
     width: 15%;
 }
 
+@media screen and (max-width: 1450px) {
+    .contactContainer, .imgContainer {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contactContainer, .imgContainer {
+        width: 40%;
+    }
+}
+
 .descritpionContainer h3 {
-    font-size: 35px;
+    font-size: 2.5rem;
     margin: 0px;
 }
 
 .descritpionContainer p {
     margin-top: 8px;
-    font-size: 18px;
+    font-size: 1.3rem;
 }
 
 .contactContainer p {
@@ -61,11 +93,18 @@ box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
 }
 
 .contactContainer a {
-    font-size: 23px;
+    font-size: 1.6rem;
     background: #FFFDF3;
     padding: 5px 10px;
     border-radius: 8px;
     transition: 0.3s;
+}
+
+@media screen and (max-width: 1450px) {
+    .contactContainer a.view-btn{
+        margin: 5px 0;
+        padding: 2px 80px;
+    }
 }
 
 .contactContainer a:hover {

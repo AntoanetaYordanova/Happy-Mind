@@ -100,3 +100,27 @@ fa-icon{
     right: 10px;
     top: 51px;
 }
+
+@media screen and (max-width: 1200px) {
+    .registerForm {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .registerForm {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .registerForm {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .registerForm {
+        width: 75%;
+    }
+}
