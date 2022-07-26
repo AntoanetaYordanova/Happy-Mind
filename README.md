@@ -16,13 +16,13 @@ Happy Mind is simple Angular application for finding online therapy or self help
 - Save/remove articles for later
 - View profile page
 
-### Frontend
+## Frontend
 
 - Angular 13
 - CSS
 - Fontawsome
 
-### Backend
+## Backend
 
 - MongoDB Atlas
 - Mongoose
