@@ -124,3 +124,9 @@ fa-icon{
         width: 75%;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .registerForm {
+        width: 90%;
+    }
+}

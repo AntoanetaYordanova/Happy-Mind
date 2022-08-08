@@ -7,7 +7,7 @@
     </a>
     <h2><a routerLink="/articles/{{article._id}}">{{article.title}}</a></h2>
     <section>
-        <p>{{article.shortDescription}}...<a routerLink="/articles/{{article._id}}" class="read-more"> read more</a></p>
+        <p class="content">{{article.shortDescription}}...<a routerLink="/articles/{{article._id}}" class="read-more"> read more</a></p>
         <section class="footerWrapper">
             <div class="category">
                 <img [src]="tagUrl" alt="">

@@ -8,6 +8,8 @@
     background: #f5f1ef;
    padding: 20px 30px;
     margin-top: 20px;
+    text-align: justify;
+
 }
 
 h2 a{
@@ -22,5 +24,19 @@ a.read-more{
 
 p{
     font-size: 22px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .blogContentWrapper {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .blogContentWrapper {
+        width: 90%;
+    }
 }
 

@@ -35,7 +35,9 @@ article {
     padding: 20px 30px;
 }
 
-
+h2 {
+    text-align: center;
+ }
 
 h2 a{
     font-size: 48px;
@@ -131,4 +133,27 @@ button:hover {
 
 span:hover{
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    h2 a {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .imgContainer {
+        width: 100%;
+    }
+
+    h2 a {
+        font-size: 34px;
+    }
+
+    .content {
+        font-size: 20px;
+    }
 }
