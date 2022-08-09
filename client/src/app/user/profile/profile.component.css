@@ -3,7 +3,7 @@ a {
 }
 
 .contentWrapper{
-    max-width: 70%;
+    width: 60%;
     margin: 20px auto;
     background: #FFFDF3;
     padding: 25px;
@@ -45,22 +45,64 @@ h4.greeting{
 box-shadow: 0px 10px 27px -16px rgba(0,0,0,0.75);
 }
 
-button{
-    background: #EBDED8;
+.article-content {
     font-size: 20px;
+    text-align: justify;
+}
+
+button{
     outline: none;
-    border: 1px solid #cabeb8;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border: none;
+}
+
+.remove-btn:hover, .read-link:hover {
+    cursor: pointer;
+    background: #eeb1bb;
+}
+
+.remove-btn, .read-link {
+    background: #F199A8;
+    font-size: 20px;
     border-radius: 8px;
     padding: 5px 10px;
     transition: 0.3s;
-    margin-bottom: 10px;
-}
-
-button:hover {
-    cursor: pointer;
-    background: #d6cbc5;
 }
 
 .noArticles{
     font-size: 26px;
+}
+
+.noArticles a {
+    font-style: italic;
+    color: #5c6767;
+    text-decoration: underline;
+}
+
+.noArticles a:hover {
+    color: #788787;
+}
+
+@media screen and (max-width: 1800px) {
+    .contentWrapper{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .contentWrapper{
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .contentWrapper{
+        width: 90%;
+    }
+
+    .article-content {
+        font-size: 17px;
+        text-align: justify;
+    }
 }

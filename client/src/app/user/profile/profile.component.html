@@ -9,12 +9,15 @@
             <a routerLink="/articles/{{ article._id }}">
               <div>
                 <h4>{{ article.title }}</h4>
-                <p>{{ article.shortDescription | shorten: 200 }}</p>
+                <p class="article-content">{{ article.shortDescription | shorten: 200 }}</p>
               </div>
             </a>
-            <button data-id="{{ article._id }}" (click)="removeHandler($event)">
+            <button class="remove-btn" data-id="{{ article._id }}" (click)="removeHandler($event)">
               Remove
             </button>
+            <a class="read-link" routerLink="/articles/{{ article._id }}">
+              Read
+            </a>
           </article>
         </ng-container>
   
@@ -23,6 +26,7 @@
           *ngIf="usersArticles && usersArticles.length == 0"
         >
           You don't have any saved articles yet.
+          Find <a routerLink="/articles">here</a>
         </section>
       </section>
     </div>

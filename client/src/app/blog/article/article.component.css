@@ -69,18 +69,18 @@ h5{
 }
 
 button{
-    background: #EBDED8;
+    background: #F199A8;
     font-size: 20px;
     outline: none;
     border: 1px solid #cabeb8;
-    border-radius: 8px;
+    border-radius: 20px;
     padding: 5px 10px;
     transition: 0.3s;
 }
 
 button:hover {
     cursor: pointer;
-    background: #d6cbc5;
+    background: #eeb1bb;
 }
 
 .category{
@@ -90,7 +90,7 @@ button:hover {
 
 .category{
     display: flex;
-    width: fit-content;
+    align-items: center;
     padding: 5px;
     border-radius: 20px;
 }
@@ -118,7 +118,7 @@ button:hover {
 
 .footerWrapper p {
     margin: 0;
-    background: #EBDED8;
+    background: #F199A8;
     padding: 5px 10px;
     border-radius: 20px;
 }

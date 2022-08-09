@@ -8,8 +8,9 @@
     flex-direction: column;
     background: rgb(255,253,245);
     padding: 35px 30px 40px 30px;
-    width: 33%;
+    width: 30%;
     border-radius: 8px;
+    padding: 3%;
 }
 
 .signUpTitle{

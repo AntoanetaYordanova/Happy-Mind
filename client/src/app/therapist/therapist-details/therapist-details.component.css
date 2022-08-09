@@ -36,7 +36,7 @@ h5{
 }
 
 header h3{
-    font-size: 2.6rem;
+    font-size: 32px;
     margin-bottom: 15px;
 }
 
@@ -45,7 +45,7 @@ header h3{
 }
 
 .rightSection p{
-    font-size: 1.4rem;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
@@ -57,6 +57,10 @@ header h3{
     list-style-type: disc;
     margin-left: 15px;
     font-size: 1.6rem;
+}
+
+.rightSection h5 {
+    font-size: 25px;
 }
 
 .specialties{
@@ -194,7 +198,7 @@ p.error {
     .contentWrapper{
        flex-direction: column;
        align-items: center;
-       max-width: 90%;
+       max-width: 100%;
     }
 
     .main-content {
@@ -202,10 +206,12 @@ p.error {
         flex-direction: column-reverse;
     }
 
-    h5, .main-content p {
+    h5 {
         text-align: center;
     }
-
+    .main-content p{
+        text-align: justify;
+    }
     .leftSection{
        margin: 5px 0;
     }
@@ -224,6 +230,7 @@ p.error {
     .leftSection{
         width: 35%;
     }
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -233,7 +240,19 @@ p.error {
 }
 
 @media screen and (max-width: 600px) {
+    .rightSection {
+        width: 90%;
+    }
     .leftSection{
-        width: 50%;
+        width: 60%;
+    }
+    
+    .rightSection h5{
+        font-size: 23px;
+    }
+    
+    .rightSection p{
+        font-size: 18px;
+        margin-bottom: 15px;
     }
 }
