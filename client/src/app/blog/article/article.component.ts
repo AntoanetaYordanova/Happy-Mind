@@ -17,7 +17,7 @@ import { IComment } from 'src/app/interfaces/Comment';
   styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent implements OnInit {
-  tagUrl: string = '/assets/images/tag-solid.svg';
+  tagUrl: string = 'assets/images/tag-solid.svg';
   faCheck = faCheck;
 
   @Input() article!: IArticle;
